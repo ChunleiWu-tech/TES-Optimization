@@ -1,0 +1,228 @@
+{
+  "study_id": "TES-EVIDENCE-GATED-MULTISCALE-CODESIGN-V16-2026-08-26",
+  "version": "16.0.0",
+  "n_base_geometries": 256,
+  "n_topology_designs": 768,
+  "screen_n_cells": 64,
+  "confirmation_n_cells": 2048,
+  "confirmation_scope": "all_baseline_material_topology_cases",
+  "n_unit_cases": 3840,
+  "n_unit_admissible": 3840,
+  "n_unit_pareto": 299,
+  "n_fixed_service_cases": 7680,
+  "n_fixed_service_admissible": 7680,
+  "n_system_pareto": 52,
+  "n_exact_system_pareto_audit": 267,
+  "numerical_decision_validation": {
+    "retained_decision_cases": 52,
+    "production_n_cells": 2048,
+    "refinement_n_cells": 4096,
+    "maximum_absolute_deliverable_energy_change_pct": 0.37357807158022727,
+    "maximum_absolute_high_grade_fraction_change": 0.003655684926013314,
+    "maximum_absolute_parallel_unit_count_change_pct": 0.42583392476933657,
+    "all_cases_accepted": true,
+    "scope": "Every retained 2048-cell decision-resolution case is reclosed at 4096 cells. The release fails if any registered capacity, high-grade fraction or integer-count tolerance is exceeded. This candidate-level refinement validates reporting resolution; it does not turn the one-dimensional model into chemistry or plant validation."
+  },
+  "service_closure": {
+    "minimum_capacity_closure_error_pct": 1.0068938460783272e-05,
+    "maximum_capacity_closure_error_pct": 79.52670816595537,
+    "adjacent_lower_feasible_cases": 0,
+    "median_resolved_to_nominal_unit_duty_ratio": 0.3466434628673468,
+    "resolved_energy_count_increased_cases": 0,
+    "final_count_exceeds_nominal_energy_count_cases": 182,
+    "power_limited_cases": 182,
+    "power_limited_oversize_median_pct": 14.01051257854805,
+    "power_limited_oversize_max_pct": 79.52670816595537,
+    "energy_limited_cases": 7498,
+    "energy_limited_oversize_median_pct": 0.011304927867317183,
+    "energy_limited_oversize_max_pct": 0.12090809419738058,
+    "maximum_unit_bed_pressure_drop_kPa": 0.0333653693674017,
+    "median_header_to_bed_pressure_drop_ratio": 65128.261343267375,
+    "maximum_bed_fraction_of_unit_plus_header_pressure_drop_pct": 0.039444605054467334
+  },
+  "outlet_grade_threshold_sensitivity": [
+    {
+      "scenario_id": "S10MW_8H",
+      "outlet_grade_threshold": 0.85,
+      "model_scope_admissible_cases": 3840,
+      "median_parallel_unit_count": 1846.5,
+      "median_parallel_unit_count_ratio_vs_g090": 0.9919794123149781,
+      "q05_parallel_unit_count_ratio_vs_g090": 0.9876599634369287,
+      "q95_parallel_unit_count_ratio_vs_g090": 0.9957083589773998,
+      "median_installed_volume_ratio_vs_g090": 0.9919794123149781
+    },
+    {
+      "scenario_id": "S10MW_8H",
+      "outlet_grade_threshold": 0.9,
+      "model_scope_admissible_cases": 3840,
+      "median_parallel_unit_count": 1864.5,
+      "median_parallel_unit_count_ratio_vs_g090": 1.0,
+      "q05_parallel_unit_count_ratio_vs_g090": 1.0,
+      "q95_parallel_unit_count_ratio_vs_g090": 1.0,
+      "median_installed_volume_ratio_vs_g090": 1.0
+    },
+    {
+      "scenario_id": "S10MW_8H",
+      "outlet_grade_threshold": 0.95,
+      "model_scope_admissible_cases": 3840,
+      "median_parallel_unit_count": 1890.0,
+      "median_parallel_unit_count_ratio_vs_g090": 1.0124838998550367,
+      "q05_parallel_unit_count_ratio_vs_g090": 1.006728473998295,
+      "q95_parallel_unit_count_ratio_vs_g090": 1.019349164467898,
+      "median_installed_volume_ratio_vs_g090": 1.0124838998550367
+    },
+    {
+      "scenario_id": "S50MW_6H",
+      "outlet_grade_threshold": 0.85,
+      "model_scope_admissible_cases": 3840,
+      "median_parallel_unit_count": 6978.0,
+      "median_parallel_unit_count_ratio_vs_g090": 0.9909014591669529,
+      "q05_parallel_unit_count_ratio_vs_g090": 0.9860590702452643,
+      "q95_parallel_unit_count_ratio_vs_g090": 0.9955651847949425,
+      "median_installed_volume_ratio_vs_g090": 0.9909014591669529
+    },
+    {
+      "scenario_id": "S50MW_6H",
+      "outlet_grade_threshold": 0.9,
+      "model_scope_admissible_cases": 3840,
+      "median_parallel_unit_count": 7050.0,
+      "median_parallel_unit_count_ratio_vs_g090": 1.0,
+      "q05_parallel_unit_count_ratio_vs_g090": 1.0,
+      "q95_parallel_unit_count_ratio_vs_g090": 1.0,
+      "median_installed_volume_ratio_vs_g090": 1.0
+    },
+    {
+      "scenario_id": "S50MW_6H",
+      "outlet_grade_threshold": 0.95,
+      "model_scope_admissible_cases": 3840,
+      "median_parallel_unit_count": 7152.0,
+      "median_parallel_unit_count_ratio_vs_g090": 1.0142305217343808,
+      "q05_parallel_unit_count_ratio_vs_g090": 1.0069809863339276,
+      "q95_parallel_unit_count_ratio_vs_g090": 1.0219214989896517,
+      "median_installed_volume_ratio_vs_g090": 1.0142305217343808
+    }
+  ],
+  "module_scale_sensitivity": {
+    "summary": [
+      {
+        "linear_scale_factor": 1.0,
+        "retained_decision_cases": 52,
+        "median_parallel_unit_count": 3223.0,
+        "minimum_parallel_unit_count": 793,
+        "maximum_parallel_unit_count": 11497,
+        "median_unit_bed_pressure_drop_kPa": 0.0023076385491159297,
+        "maximum_unit_bed_pressure_drop_kPa": 0.012463113613840407,
+        "median_bed_fraction_of_total_pressure_drop_pct": 0.0034121824339700905
+      },
+      {
+        "linear_scale_factor": 2.0,
+        "retained_decision_cases": 52,
+        "median_parallel_unit_count": 527.0,
+        "minimum_parallel_unit_count": 110,
+        "maximum_parallel_unit_count": 1438,
+        "median_unit_bed_pressure_drop_kPa": 0.007886337629493433,
+        "maximum_unit_bed_pressure_drop_kPa": 0.04993729654401558,
+        "median_bed_fraction_of_total_pressure_drop_pct": 0.022085914550503884
+      },
+      {
+        "linear_scale_factor": 4.0,
+        "retained_decision_cases": 52,
+        "median_parallel_unit_count": 132.0,
+        "minimum_parallel_unit_count": 28,
+        "maximum_parallel_unit_count": 263,
+        "median_unit_bed_pressure_drop_kPa": 0.01976029841338109,
+        "maximum_unit_bed_pressure_drop_kPa": 0.15748939421518934,
+        "median_bed_fraction_of_total_pressure_drop_pct": 0.08497969870180774
+      }
+    ],
+    "interpretation": "Extrapolative model-domain sensitivity with diameter and height scaled together and nominal mass flow scaled with cross-sectional area to preserve superficial velocity. Shell stress, manifolds, valves, heat exchangers, installation count, cost and EPC feasibility are not solved."
+  },
+  "transport_temperature_sensitivity": {
+    "retained_decision_cases": 52,
+    "maximum_absolute_parallel_unit_count_change_pct": 0.12578616352201255,
+    "maximum_absolute_installed_volume_change_pct": 0.12578616352201255,
+    "maximum_absolute_bed_pressure_drop_change_pct": 21.0740043804188
+  },
+  "service_monotonicity_audit": {
+    "retained_decision_cases": 52,
+    "integer_counts_scanned": 94918,
+    "cases_with_nondecreasing_installed_energy": 52,
+    "cases_matching_reported_minimum": 52,
+    "scope": "full integer scan from the power lower bound to the reported minimum for every retained decision-resolution case; a stratified all-service probe separately searches for non-monotone capacity increments before the exact-front audit",
+    "stratified_probe_cases": 90,
+    "stratified_probe_count_evaluations": 778,
+    "stratified_probe_nondecreasing_cases": 90
+  },
+  "validation_threshold_context": {
+    "registered_g090_hot_end_margin_K": 4.999999999999999,
+    "cooling_holdout_RMSE_K": 61.294460205054236,
+    "cooling_holdout_mean_bias_K": -48.500005868642546,
+    "RMSE_to_threshold_margin_ratio": 12.25889204101085,
+    "bias_to_threshold_margin_ratio": 9.700001173728511,
+    "interpretation": "Deterministic decision-threshold sensitivity. The cooling holdout discrepancy is from an air packed bed and is not transferred as a molten-salt probability distribution or correction."
+  },
+  "pairwise_scale_order": {
+    "matched_groups": 1536,
+    "pairwise_comparisons": 15360,
+    "pairwise_reversals": 0,
+    "system_exact_ties_from_nonzero_material_differences": 218,
+    "groups_with_at_least_one_tie": 53,
+    "groups_with_fully_strict_order": 1483,
+    "retention_min_pct": 0.0,
+    "retention_q05_pct": 34.29741678667521,
+    "retention_median_pct": 46.86839978646006,
+    "retention_q95_pct": 57.11145167811432,
+    "retention_max_pct": 59.40689503828818
+  },
+  "evidence_gate": {
+    "engineering_deployment_eligible_unit_cases": 0,
+    "engineering_deployment_eligible_service_cases": 0,
+    "interpretation": "Model-domain physics comparisons; not deployment-ready designs."
+  },
+  "screen_confirmation": {
+    "median_absolute_t90_relative_difference_pct": 0.18177761594110797,
+    "p95_absolute_t90_relative_difference_pct": 0.2816169117973127,
+    "median_high_grade_absolute_difference": 0.011002455935545497,
+    "p95_high_grade_absolute_difference": 0.03277796798321487
+  },
+  "external_validation": [
+    {
+      "validation_id": "DLR_WEber_2025_HEATING_CALIBRATION",
+      "role": "calibration",
+      "observable": "area-weighted reconstructed outlet temperature",
+      "RMSE_K": 12.887662444317133,
+      "NRMSE_pct_of_500K_span": 2.577532488863427,
+      "mean_bias_K": 0.9495463677871852,
+      "radial_envelope_coverage_pct": 97.6303317535545,
+      "selected_wall_loss_W_m3K": 430.0,
+      "n_cells": 40,
+      "claim_boundary": "one heat-loss coefficient calibrated on heating; no heat-transfer multiplier or axial-dispersion calibration"
+    },
+    {
+      "validation_id": "DLR_WEber_2025_COOLING_TEMPORAL_HOLDOUT",
+      "role": "validation",
+      "observable": "cooling outlet temperature and radial measurement envelope",
+      "RMSE_K": 61.294460205054236,
+      "NRMSE_pct_of_500K_span": 12.258892041010848,
+      "mean_bias_K": -48.500005868642546,
+      "radial_envelope_coverage_pct": 81.11111111111111,
+      "selected_wall_loss_W_m3K": 430.0,
+      "n_cells": 40,
+      "claim_boundary": "cooling held out; radial nonuniformity, wall inertia and other unresolved effects are reported as model-form discrepancy"
+    },
+    {
+      "validation_id": "DLR_WEber_2025_FULL_TRACE",
+      "role": "diagnostic",
+      "observable": "full heating-cooling trace",
+      "RMSE_K": 35.210631303609,
+      "NRMSE_pct_of_500K_span": 7.042126260721799,
+      "mean_bias_K": -13.836034035132004,
+      "radial_envelope_coverage_pct": 92.69102990033223,
+      "selected_wall_loss_W_m3K": 430.0,
+      "n_cells": 40,
+      "claim_boundary": "figure-digitized benchmark with ±5 K digitization allowance; raw repository data are not redistributed"
+    }
+  ],
+  "claim_boundary": "V16 is an evidence-gated reference-scale co-design and self-consistent fixed-service comparison. It uses a conservative one-dimensional LTNE finite-volume model with MUSCL advection, exact interphase exchange, explicit particle resistance and counter-flow discharge. Every baseline material-topology case is confirmed on a 2048-cell axial mesh; every retained decision-resolution case is independently reclosed at 4096 cells before release. The DLR air experiment tests transferable packed-bed model behavior. It does not validate molten-salt chemistry. Salt-skeleton compatibility, corrosion, wetting, long-cycle stability, structural design, cost and EPC feasibility remain gated.",
+  "status": "PASS"
+}

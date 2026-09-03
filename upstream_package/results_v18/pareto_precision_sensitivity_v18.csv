@@ -1,0 +1,9 @@
+scenario_id,decision_precision_multiplier,front_definition,n_front_designs,n_fluids,n_topologies
+S10MW_8H,0.0,exact,125,5,3
+S50MW_6H,0.0,exact,146,4,3
+S10MW_8H,0.5,epsilon_box,38,2,3
+S50MW_6H,0.5,epsilon_box,35,2,1
+S10MW_8H,1.0,epsilon_box,24,2,2
+S50MW_6H,1.0,epsilon_box,28,2,2
+S10MW_8H,2.0,epsilon_box,13,2,2
+S50MW_6H,2.0,epsilon_box,18,2,2

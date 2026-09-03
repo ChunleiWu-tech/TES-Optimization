@@ -1,0 +1,150 @@
+{
+  "registry_id": "TES-ARCHITECTURE-MODELS-V10-REDUCED-ORDER-2026-08-20",
+  "architectures": [
+    {
+      "id": "sensible_packed_bed_LTNE",
+      "status": "implemented_runnable",
+      "governing_physics": [
+        "1D two-temperature LTNE energy balance",
+        "Ergun pressure drop",
+        "Gunn particle-fluid convective heat transfer",
+        "Trevisan finite spherical-particle conduction resistance"
+      ],
+      "primary_geometry_variables": [
+        "bed diameter",
+        "bed height",
+        "porosity",
+        "particle diameter"
+      ],
+      "operating_variables": [
+        "mass flow",
+        "hot temperature",
+        "cold temperature"
+      ],
+      "validation_source": "WEISS_PACKED_BED_SOLAR_SALT_2024",
+      "v10_validation_policy": "No CFD/FEM validation is claimed. Ranking is unlocked only by source-complete reduced-order physics and matched experimental/source-traceable evidence; the Weiss record supports geometry and component closure, not transient-field validation."
+    },
+    {
+      "id": "encapsulated_pcm_packed_bed",
+      "status": "implemented_data_gated",
+      "governing_physics": [
+        "1D HTF advection",
+        "capsule sensible-latent enthalpy",
+        "capsule thermal resistance",
+        "packed-bed pressure drop"
+      ],
+      "primary_geometry_variables": [
+        "capsule diameter",
+        "shell thickness",
+        "porosity",
+        "bed height"
+      ],
+      "required_missing_evidence": [
+        "matched PCM density, sensible Cp and latent enthalpy",
+        "shell conductivity and thickness",
+        "matched HTF transport",
+        "experimental charge/discharge or outlet-temperature benchmark for the matched capsule system"
+      ],
+      "benchmark_source": "LI_MACROENCAP_PCM_2018",
+      "kernel": "encapsulated_pcm_packed_bed_metrics",
+      "ranking_note": "governing-equation kernel implemented; literature transition/energy density alone is insufficient for matched dynamic ranking",
+      "v10_validation_policy": "No CFD/FEM validation is claimed. Ranking is unlocked only by source-complete reduced-order physics and matched experimental/source-traceable evidence."
+    },
+    {
+      "id": "finned_pcm",
+      "status": "implemented_data_gated",
+      "governing_physics": [
+        "enthalpy formulation",
+        "conduction/natural-convection represented by an evidence-calibrated reduced-order fin model"
+      ],
+      "primary_geometry_variables": [
+        "fin angle",
+        "fin length",
+        "fin thickness",
+        "fin number/spacing"
+      ],
+      "forbidden_shortcut": "Do not multiply melting time by a literature percentage.",
+      "benchmark_source": "GUO_ANGLED_FIN_2022",
+      "kernel": "finned_pcm_geometry_metrics",
+      "required_missing_evidence": [
+        "matched PCM enthalpy-density vector",
+        "fin material properties",
+        "orientation-resolved experimental melting-front or temperature-time benchmark, or an independently validated reduced-order correlation"
+      ],
+      "v10_validation_policy": "No CFD/FEM validation is claimed. Ranking is unlocked only by source-complete reduced-order physics and matched experimental/source-traceable evidence."
+    },
+    {
+      "id": "open_cell_foam_pcm",
+      "status": "implemented_data_gated",
+      "governing_physics": [
+        "porous LTNE energy equations",
+        "Darcy-Forchheimer momentum resistance",
+        "effective conductivity"
+      ],
+      "primary_geometry_variables": [
+        "porosity",
+        "PPI",
+        "foam placement/fill fraction"
+      ],
+      "required_missing_evidence": [
+        "permeability",
+        "Forchheimer coefficient",
+        "temperature-resolved effective conductivity",
+        "experimental pressure-drop and transient thermal benchmark for the matched foam/PCM system"
+      ],
+      "benchmark_sources": [
+        "ZHANG_SIC_SOLAR_SALT_2022",
+        "ZHANG_SIC_SHELL_TUBE_2023",
+        "ZHANG_SIC_DISCHARGE_2022"
+      ],
+      "kernel": "foam_pcm_metrics",
+      "v10_validation_policy": "No CFD/FEM validation is claimed. Ranking is unlocked only by source-complete reduced-order physics and matched experimental/source-traceable evidence."
+    },
+    {
+      "id": "structured_channel",
+      "status": "implemented_data_gated",
+      "governing_physics": [
+        "channel momentum balance",
+        "convective heat transfer",
+        "solid conduction"
+      ],
+      "primary_geometry_variables": [
+        "hydraulic diameter",
+        "channel count",
+        "wall thickness",
+        "channel length"
+      ],
+      "benchmark_source": "ZHOU_HONEYCOMB_2022",
+      "kernel": "structured_square_channel_metrics",
+      "required_missing_evidence": [
+        "matched channel material properties",
+        "matched HTF properties and flow regime",
+        "experimental pressure-drop and outlet-temperature/thermal-front benchmark"
+      ],
+      "v10_validation_policy": "No CFD/FEM validation is claimed. Ranking is unlocked only by source-complete reduced-order physics and matched experimental/source-traceable evidence."
+    },
+    {
+      "id": "cascaded_units",
+      "status": "coupling_scaffold_data_gated",
+      "governing_physics": [
+        "serial outlet-to-inlet coupling",
+        "parallel flow splitting",
+        "layer-specific material/topology kernels"
+      ],
+      "primary_variables": [
+        "layer order",
+        "layer fraction",
+        "series count",
+        "parallel count",
+        "per-layer topology"
+      ],
+      "benchmark_source": "CHEN_CASCADE_MOO_2025",
+      "required_missing_evidence": [
+        "source-complete per-layer material/topology kernels",
+        "experimental or source-traceable serial outlet-to-inlet transient benchmark"
+      ],
+      "ranking_note": "heterogeneous cascade ranking remains disabled until transient layer coupling is source-complete",
+      "v10_validation_policy": "No CFD/FEM validation is claimed. Ranking is unlocked only by source-complete reduced-order physics and matched experimental/source-traceable evidence."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "rows": 7680,
+  "corrected_count_rows": 67,
+  "count_decreases": 27,
+  "count_increases": 40,
+  "maximum_absolute_count_change": 1,
+  "maximum_absolute_frozen_capacity_reproduction_error_pct": 0.0031180522412022,
+  "all_corrected_rows_match_independent_integer_audit": true,
+  "unchanged_count_rows": 7613,
+  "results_v16_modified": false
+}

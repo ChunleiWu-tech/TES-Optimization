@@ -1,0 +1,142 @@
+{
+  "status": "PASS",
+  "version": "18.0.0",
+  "analysis_scope": "incremental continuous closure and integer design-consequence boundary on the frozen V16 physical baseline",
+  "gates": {
+    "Q0_integer_reclosure_and_dependency_regression": {
+      "pass": true,
+      "corrected_count_rows": 67,
+      "count_increases": 40,
+      "count_decreases": 27,
+      "maximum_absolute_frozen_capacity_reproduction_error_pct": 0.0031180522412022,
+      "decision_front_membership_changed": false,
+      "exact_front_rows_old": 267,
+      "exact_front_rows_v18": 271,
+      "pairwise_tie_classification_changes": 0
+    },
+    "Q1_integer_reproduction": {
+      "pass": true,
+      "n_rows": 7680,
+      "n_matches": 7680
+    },
+    "Q2_constraint_mapping": {
+      "pass": true,
+      "baseline_energy_constrained": 7498,
+      "baseline_power_rating_constrained": 182,
+      "continuous_constraint_cross_tab": {
+        "energy_constrained": {
+          "energy_constrained": 7498,
+          "power_rating_constrained": 0
+        },
+        "power_rating_constrained": {
+          "energy_constrained": 0,
+          "power_rating_constrained": 182
+        }
+      }
+    },
+    "Q3_pairwise_regression": {
+      "pass": true,
+      "n_pairs": 15360,
+      "n_equivalent": 218,
+      "n_baseline_exact_ties": 218,
+      "n_groups_with_equivalence": 53
+    },
+    "Q4_boundary_identity": {
+      "pass": true,
+      "n_matches": 15360,
+      "n_pairs": 15360
+    },
+    "Q5_root_residual": {
+      "pass": true,
+      "registered_limit": 1e-05,
+      "maximum": 9.920237012768967e-06,
+      "median": 1.2189339789377601e-08
+    },
+    "Q6_frozen_baseline_hashes": {
+      "pass": true,
+      "baseline_hashes": {
+        "advantage_transfer_v16.csv": "7d8e92213f5f0aad25996166a0906340d774da6aac33f65c19bc7c9076f3e50e",
+        "analysis_summary_v16.json": "b7c3f566a3a392733090a7ca226e85fa03511cffa5f176794228446b672439cc",
+        "architecture_gate.csv": "cf85863a2cd81da6db76d958275d1a59d1d07d53a77b1b53ea6cd8a3789a69e6",
+        "bounded_robustness_v16.csv": "9d4f811bd3c722b934d325f3a060cb5c8a75af6fe61b0368fff5fc21b2106e94",
+        "codesign_results_v16.csv": "7434faf82d7098a163350302611eb915a7f1c70d91e2dad7ced4eacace142be1",
+        "decision_grid_refinement_v16.csv": "8904908b62fb46eb152427fdd4bb487377f912c527afadcf367ab3231b97f99c",
+        "evidence_coverage.csv": "20a638d5eb1333aef67ec1fb9f69aa49d1f7d537be9d0899e0374b83fd6b6939",
+        "evidence_summary.json": "f659fae007f69db214e88c319ea9239a2ce0f66f7f56cd76d91d9e2d918b7503",
+        "external_validation_calibration_v16.csv": "560a5d4773f3717afca482a250d562f1e13af83d8f3aa0c55ec5d0365e6fd8a6",
+        "external_validation_metrics_v16.csv": "59e9e56ddd16ac927a74fadd7ac995d6549f085bfd3d90a7867c13e576c70f2a",
+        "external_validation_trace_v16.csv": "36c13ca8426d084d747acc69d28a9ddaa4066a4d192d73e8ec6654f9dfb70dfd",
+        "fixed_service_results_v16.csv": "09682e589e5616b0502c68235fa3ece30ab356d8dbb19a6b673831947f0aa99e",
+        "geometry_pool.csv": "073e594c299021cc9a1916d85c6c9ddd86d0030b327cc5e3c98cd307e262fcd5",
+        "interaction_indices_v16.csv": "208781576c1764302423ad8c7a9d1bac51ac2613bd8c09b3a1741e38ed04653c",
+        "model_form_stress_v16.csv": "6b9cb9569652eabaea21b3e62b5b52d2cddf69fe2a0fee12d523dfc83a18dcff",
+        "module_scale_sensitivity_v16.csv": "d256d6c6104651562c69f6ca4da4f02eeffff43c7ba3c97d92d00cf752191f53",
+        "nanoparticle_dose_response.csv": "01112f3627f39f0aa187755b6cc4949b784439832c2abb00c4ab148f1b5d27a5",
+        "numerical_verification_v16.csv": "aa8fde600dfb18c178571b70cb42d486efe8d963fa1d85bc316f91b99dbb7042",
+        "outlet_grade_threshold_sensitivity_v16.csv": "d7f9010fc399346129367ed797b62170f7c065bf24f64f36ef03903e4820d7ec",
+        "pairwise_scale_order_v16.csv": "5fd2ea69d16287a9bf3cea850687c03dc2d772f7107e505d33b6ec0330a32e42",
+        "pareto_precision_sensitivity_v16.csv": "573112d63ea5db5738a1776d4066b59343664814301fba69f0465f28a4229bd5",
+        "particle_model_hierarchy_v16.csv": "0314a4cb416485e240d2673a54c09a87d91e067f69fbfb07f4ced01b4759cf86",
+        "reference_control_volume_closure_v16.json": "3b775c5ca1cd7b01b6b51d9987707ca13daa5dd403723d844810a2e3c524fb8c",
+        "run_summary_v16.json": "047cc25bdd5190f3a8a8cd23a163b43a3ee6ea9bdde84b530ee0c044f9a06ccf",
+        "sampling_robustness_v16.csv": "66b42ea644867e89041ea96fd544d43c9aa7971a8cacb7576319cb15d6c7fa03",
+        "scientific_qa_report_v16.json": "d0ee04be5bc5b93fc8bcd54b8ec8bc1d5f9849d8c2f32805efbd895bc4a14a53",
+        "screen_to_confirmation_v16.csv": "29a028772e049fe48f5ea44a57a6167a68027778e3ae3922da519b7c0c3acf10",
+        "service_monotonicity_audit_v16.csv": "6321c0fc0d057eb309c958578d8858121884a5360dd7d36a6d0a2e7927fb3158",
+        "service_monotonicity_probe_v16.csv": "d37507f56ff46cf86407686c4ef7aae5df1981b098a7db32e4633d0f86be8166",
+        "skeleton_within_source_effects.csv": "ef83fafafe99542bb3b01a05b1e53da7c8981dc4faa24e3cb57a93b440c3f929",
+        "standby_loss_v16.csv": "c687459f154f26d8029abc97053713d844a7924487034b1221d743a77d162f90",
+        "system_pareto_exact_audit_v16.csv": "45da7c3ba4a6287e07bf2909283f93d2a1b3ad8a5458b5fc65fdbec9d3c9a101",
+        "system_pareto_front_v16.csv": "7df1127a7a2aa10b736793a0ba91ca6f1b91c7f0c631b7bd5199dfb4e2383386",
+        "topology_response_v16.csv": "6e5eb7161088cfebc4c4a63c9c47c1839b63078e39d0c8f3e938dac34e0b5968",
+        "transport_temperature_sensitivity_v16.csv": "e7954e29209648a30f34049d6ab7a710b5acea698a54c8024ef2fd5dc7d10d99",
+        "unit_pareto_front_v16.csv": "d836d38b89a6aefcd1065dacd337cfcdba6499ae39143f1965abe4ab00119141",
+        "unit_test_report_v16.json": "363caf573200cd0d00fcdfbd1e9e81806e17e8b0be7afaa1b93c21b2f6bd530d"
+      },
+      "current_hashes": {
+        "advantage_transfer_v16.csv": "7d8e92213f5f0aad25996166a0906340d774da6aac33f65c19bc7c9076f3e50e",
+        "analysis_summary_v16.json": "b7c3f566a3a392733090a7ca226e85fa03511cffa5f176794228446b672439cc",
+        "architecture_gate.csv": "cf85863a2cd81da6db76d958275d1a59d1d07d53a77b1b53ea6cd8a3789a69e6",
+        "bounded_robustness_v16.csv": "9d4f811bd3c722b934d325f3a060cb5c8a75af6fe61b0368fff5fc21b2106e94",
+        "codesign_results_v16.csv": "7434faf82d7098a163350302611eb915a7f1c70d91e2dad7ced4eacace142be1",
+        "decision_grid_refinement_v16.csv": "8904908b62fb46eb152427fdd4bb487377f912c527afadcf367ab3231b97f99c",
+        "evidence_coverage.csv": "20a638d5eb1333aef67ec1fb9f69aa49d1f7d537be9d0899e0374b83fd6b6939",
+        "evidence_summary.json": "f659fae007f69db214e88c319ea9239a2ce0f66f7f56cd76d91d9e2d918b7503",
+        "external_validation_calibration_v16.csv": "560a5d4773f3717afca482a250d562f1e13af83d8f3aa0c55ec5d0365e6fd8a6",
+        "external_validation_metrics_v16.csv": "59e9e56ddd16ac927a74fadd7ac995d6549f085bfd3d90a7867c13e576c70f2a",
+        "external_validation_trace_v16.csv": "36c13ca8426d084d747acc69d28a9ddaa4066a4d192d73e8ec6654f9dfb70dfd",
+        "fixed_service_results_v16.csv": "09682e589e5616b0502c68235fa3ece30ab356d8dbb19a6b673831947f0aa99e",
+        "geometry_pool.csv": "073e594c299021cc9a1916d85c6c9ddd86d0030b327cc5e3c98cd307e262fcd5",
+        "interaction_indices_v16.csv": "208781576c1764302423ad8c7a9d1bac51ac2613bd8c09b3a1741e38ed04653c",
+        "model_form_stress_v16.csv": "6b9cb9569652eabaea21b3e62b5b52d2cddf69fe2a0fee12d523dfc83a18dcff",
+        "module_scale_sensitivity_v16.csv": "d256d6c6104651562c69f6ca4da4f02eeffff43c7ba3c97d92d00cf752191f53",
+        "nanoparticle_dose_response.csv": "01112f3627f39f0aa187755b6cc4949b784439832c2abb00c4ab148f1b5d27a5",
+        "numerical_verification_v16.csv": "aa8fde600dfb18c178571b70cb42d486efe8d963fa1d85bc316f91b99dbb7042",
+        "outlet_grade_threshold_sensitivity_v16.csv": "d7f9010fc399346129367ed797b62170f7c065bf24f64f36ef03903e4820d7ec",
+        "pairwise_scale_order_v16.csv": "5fd2ea69d16287a9bf3cea850687c03dc2d772f7107e505d33b6ec0330a32e42",
+        "pareto_precision_sensitivity_v16.csv": "573112d63ea5db5738a1776d4066b59343664814301fba69f0465f28a4229bd5",
+        "particle_model_hierarchy_v16.csv": "0314a4cb416485e240d2673a54c09a87d91e067f69fbfb07f4ced01b4759cf86",
+        "reference_control_volume_closure_v16.json": "3b775c5ca1cd7b01b6b51d9987707ca13daa5dd403723d844810a2e3c524fb8c",
+        "run_summary_v16.json": "047cc25bdd5190f3a8a8cd23a163b43a3ee6ea9bdde84b530ee0c044f9a06ccf",
+        "sampling_robustness_v16.csv": "66b42ea644867e89041ea96fd544d43c9aa7971a8cacb7576319cb15d6c7fa03",
+        "scientific_qa_report_v16.json": "d0ee04be5bc5b93fc8bcd54b8ec8bc1d5f9849d8c2f32805efbd895bc4a14a53",
+        "screen_to_confirmation_v16.csv": "29a028772e049fe48f5ea44a57a6167a68027778e3ae3922da519b7c0c3acf10",
+        "service_monotonicity_audit_v16.csv": "6321c0fc0d057eb309c958578d8858121884a5360dd7d36a6d0a2e7927fb3158",
+        "service_monotonicity_probe_v16.csv": "d37507f56ff46cf86407686c4ef7aae5df1981b098a7db32e4633d0f86be8166",
+        "skeleton_within_source_effects.csv": "ef83fafafe99542bb3b01a05b1e53da7c8981dc4faa24e3cb57a93b440c3f929",
+        "standby_loss_v16.csv": "c687459f154f26d8029abc97053713d844a7924487034b1221d743a77d162f90",
+        "system_pareto_exact_audit_v16.csv": "45da7c3ba4a6287e07bf2909283f93d2a1b3ad8a5458b5fc65fdbec9d3c9a101",
+        "system_pareto_front_v16.csv": "7df1127a7a2aa10b736793a0ba91ca6f1b91c7f0c631b7bd5199dfb4e2383386",
+        "topology_response_v16.csv": "6e5eb7161088cfebc4c4a63c9c47c1839b63078e39d0c8f3e938dac34e0b5968",
+        "transport_temperature_sensitivity_v16.csv": "e7954e29209648a30f34049d6ab7a710b5acea698a54c8024ef2fd5dc7d10d99",
+        "unit_pareto_front_v16.csv": "d836d38b89a6aefcd1065dacd337cfcdba6499ae39143f1965abe4ab00119141",
+        "unit_test_report_v16.json": "363caf573200cd0d00fcdfbd1e9e81806e17e8b0be7afaa1b93c21b2f6bd530d"
+      }
+    },
+    "Q7_granularity_is_hypothesis_test": {
+      "pass": true,
+      "registered_as_acceptance_gate": false,
+      "interpretation": "Monotonicity is not required; the observed service- and geometry-dependent response is reported without threshold engineering."
+    }
+  }
+}

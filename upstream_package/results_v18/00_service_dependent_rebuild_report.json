@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "service_rows": 7680,
+  "count_changed_rows": 67,
+  "count_increases": 40,
+  "count_decreases": 27,
+  "exact_front_rows_old": 267,
+  "exact_front_rows_v18": 271,
+  "exact_front_membership_changed": true,
+  "decision_front_rows_old": 52,
+  "decision_front_rows_v18": 52,
+  "decision_front_membership_changed": false,
+  "pairwise_rows": 15360,
+  "old_exact_ties": 218,
+  "v18_exact_ties": 218,
+  "pairwise_tie_classification_changes": 0
+}

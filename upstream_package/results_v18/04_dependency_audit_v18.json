@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "conditions": {
+    "decision_front_membership_equal": true,
+    "decision_front_counts_equal": true,
+    "monotonicity_probe_selection_change_resolved": true,
+    "threshold_v18_pass": true
+  },
+  "decision_front_rows": 52,
+  "probe_selection_count_v16": 90,
+  "probe_selection_count_v18": 90,
+  "monotonicity_probe_selection_equal": false,
+  "recomputed_tables": [
+    "fixed_service_results_v18.csv",
+    "system_pareto_exact_audit_v18.csv",
+    "system_pareto_front_v18.csv",
+    "pareto_precision_sensitivity_v18.csv",
+    "advantage_transfer_v18.csv",
+    "pairwise_scale_order_v18.csv",
+    "outlet_grade_threshold_sensitivity_v18.csv",
+    "01_continuous_service_closure.csv",
+    "02_pairwise_design_consequence.csv",
+    "03_design_consequence_summary.csv",
+    "service_monotonicity_probe_v18.csv"
+  ],
+  "retained_v16_verification_tables": {
+    "decision_grid_refinement_v16.csv": "same decision-front membership and unchanged counts",
+    "module_scale_sensitivity_v16.csv": "recomputed from unit physics for the same decision-front keys",
+    "transport_temperature_sensitivity_v16.csv": "recomputed from unit physics for the same decision-front keys",
+    "service_monotonicity_audit_v16.csv": "same retained keys and identical integer scan bounds",
+    "bounded_robustness_v16.csv": "same decision-front design set; nominal values are used only for selection",
+    "model_form_stress_v16.csv": "same decision-front design set; nominal values are used only for selection",
+    "standby_loss_v16.csv": "same decision-front design set; calculation depends on unit-scale inventory",
+    "sampling_robustness_v16.csv": "independent resampling calculation",
+    "numerical_verification_v16.csv": "independent numerical verification",
+    "external_validation_metrics_v16.csv": "independent experimental benchmark",
+    "external_validation_trace_v16.csv": "independent experimental benchmark",
+    "external_validation_calibration_v16.csv": "independent experimental benchmark",
+    "particle_model_hierarchy_v16.csv": "independent particle-model hierarchy",
+    "topology_response_v16.csv": "independent topology response study",
+    "interaction_indices_v16.csv": "depends only on unit-scale archive"
+  },
+  "probe_selection_changed_and_recomputed": true,
+  "interpretation": "Retained tables are not assumed unchanged from a version label. Each is retained only because its selection keys and numerical inputs are independent of the corrected service-count rows."
+}

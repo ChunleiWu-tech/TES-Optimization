@@ -1,0 +1,26 @@
+source_id,table_locator,base_salt_composition,nanoparticle_id,nanoparticle_loading_wt_pct,nanoparticle_primary_diameter_nm,temperature_window_C,sample_id,cp_J_gK
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,0.0,12,250-420,1,1.40
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,0.0,12,250-420,2,1.57
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,0.0,12,250-420,3,1.39
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,0.0,12,250-420,4,1.46
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,0.0,12,250-420,5,1.58
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,0.5,12,250-420,1,1.53
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,0.5,12,250-420,2,1.55
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,0.5,12,250-420,3,1.52
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,0.5,12,250-420,4,1.62
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,0.5,12,250-420,5,1.43
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,1.0,12,250-420,1,1.85
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,1.0,12,250-420,2,1.95
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,1.0,12,250-420,3,1.85
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,1.0,12,250-420,4,1.78
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,1.0,12,250-420,5,1.82
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,1.5,12,250-420,1,1.61
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,1.5,12,250-420,2,1.54
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,1.5,12,250-420,3,1.41
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,1.5,12,250-420,4,1.38
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,1.5,12,250-420,5,1.48
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,2.0,12,250-420,1,1.64
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,2.0,12,250-420,2,1.65
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,2.0,12,250-420,3,1.34
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,2.0,12,250-420,4,1.54
+ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,Table 2; liquid-state average 250-420 C,60 wt% NaNO3 + 40 wt% KNO3,SiO2,2.0,12,250-420,5,1.49

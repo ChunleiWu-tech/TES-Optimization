@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "version": "18.0.0",
+  "incremental_outputs": [
+    "01_continuous_service_closure.csv",
+    "02_pairwise_design_consequence.csv",
+    "03_design_consequence_summary.csv"
+  ],
+  "n_continuous_cases": 7680,
+  "n_pairwise_cases": 15360,
+  "n_configuration_equivalent": 218,
+  "n_groups_with_equivalence": 53,
+  "configuration_equivalent_fraction": 0.014192708333333333,
+  "maximum_root_relative_residual": 9.920237012768967e-06,
+  "baseline_version": "16.0.0",
+  "physical_model_changed": false,
+  "service_integer_reclosure_applied": true,
+  "corrected_service_count_rows": 67,
+  "analysis_coordinate_added": "continuous module requirement and exact integer-boundary margin"
+}

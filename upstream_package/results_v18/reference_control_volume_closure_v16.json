@@ -1,0 +1,11 @@
+{
+  "reference_storage_volume_m3": 0.7218966979156975,
+  "derived_filler_MWh": 0.035401654847458545,
+  "reported_filler_MWh": 0.0354,
+  "filler_relative_error_pct": 0.004674710334873211,
+  "derived_geometric_pore_salt_MWh": 0.028264661956788277,
+  "reported_salt_inventory_MWh": 0.0458,
+  "geometric_pore_fraction_of_reported_salt_pct": 61.71323571351152,
+  "unresolved_reported_salt_inventory_MWh": 0.017535338043211723,
+  "interpretation": "Filler closes at component level. Salt reported by the source exceeds geometric pore inventory and remains an explicitly unresolved control-volume inventory rather than being forced into model error."
+}

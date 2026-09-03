@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "version": "18.0.0",
+  "qc_status": "PASS",
+  "dependency_audit_status": "PASS",
+  "tables": {
+    "fixed_service_results_v18.csv": {
+      "pass": true,
+      "rows": 7680,
+      "expected_rows": 7680,
+      "columns": 74,
+      "duplicate_primary_keys": 0,
+      "infinite_numeric_columns": [],
+      "sha256": "b9ca8c4619d67c19d0fae040bbecaa78a680ce19c257577c2cad8892157b634b"
+    },
+    "00_integer_reclosure_audit.csv": {
+      "pass": true,
+      "rows": 7680,
+      "expected_rows": 7680,
+      "columns": 23,
+      "duplicate_primary_keys": 0,
+      "infinite_numeric_columns": [],
+      "sha256": "9f6586c0e049970bfdf27ff41b4c547af16769dd0d68d86e10ec5a42874e04c7"
+    },
+    "01_continuous_service_closure.csv": {
+      "pass": true,
+      "rows": 7680,
+      "expected_rows": 7680,
+      "columns": 35,
+      "duplicate_primary_keys": 0,
+      "infinite_numeric_columns": [],
+      "sha256": "63648f28cfc98e586b211ce02cddda5edd1d39f4ad63679c0be1794738c1b53a"
+    },
+    "02_pairwise_design_consequence.csv": {
+      "pass": true,
+      "rows": 15360,
+      "expected_rows": 15360,
+      "columns": 38,
+      "duplicate_primary_keys": null,
+      "infinite_numeric_columns": [],
+      "sha256": "105539f86db9a81852d1cf6f1ddd6f435e133ade0fcc31d187cc5327839d14b5"
+    },
+    "outlet_grade_threshold_sensitivity_v18.csv": {
+      "pass": true,
+      "rows": 23040,
+      "expected_rows": 23040,
+      "columns": 82,
+      "duplicate_primary_keys": null,
+      "infinite_numeric_columns": [],
+      "sha256": "807b6591c1e443376b43300ce6732adf26a8ef154553144313553a56be31eaa3"
+    },
+    "system_pareto_front_v18.csv": {
+      "pass": true,
+      "rows": 52,
+      "expected_rows": 52,
+      "columns": 85,
+      "duplicate_primary_keys": 0,
+      "infinite_numeric_columns": [],
+      "sha256": "d6cd175b85f2d70d90daf25541908304e26e69165b858cf20e983d71d91811f5"
+    },
+    "system_pareto_exact_audit_v18.csv": {
+      "pass": true,
+      "rows": 271,
+      "expected_rows": 271,
+      "columns": 75,
+      "duplicate_primary_keys": 0,
+      "infinite_numeric_columns": [],
+      "sha256": "50c4f50c1d13d684a9a84f4d54965662194e079336197338ea25560b76f805e1"
+    },
+    "service_monotonicity_probe_v18.csv": {
+      "pass": true,
+      "rows": 778,
+      "expected_rows": 778,
+      "columns": 12,
+      "duplicate_primary_keys": null,
+      "infinite_numeric_columns": [],
+      "sha256": "58a9f5a724f66e14432fd8988120a32da94f100abfcaf17e68e8f1854dc8d014"
+    }
+  },
+  "scientific_scope": "Continuous module requirement and exact integer-boundary consequence on the unchanged V16 physical model.",
+  "claim_boundary": "The calculation identifies whether a matched fluid-property contrast changes the required number of parallel packed-bed modules. It does not rank unlike skeleton evidence sources or validate molten-salt corrosion, wetting, or long-term compatibility."
+}

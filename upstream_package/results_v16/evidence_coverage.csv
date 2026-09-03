@@ -1,0 +1,7 @@
+candidate_id,architecture_family,composition_resolved,temperature_window_resolved,capacity_resolved,solid_property_vector_resolved,hydraulic_closure,matched_transient_unit,dynamic_common_rank_eligible,evidence_tier,source_id
+CERAMIC_SPHERE_PACKED_BED,packed_particle_bed,1,1,1,1,1,1,1,A,WEISS_PACKED_BED_SOLAR_SALT_2024
+SOLAR_SALT_NEAT_PCM,latent_pcm_baseline,1,1,1,0,0,0,0,B,KUMAR_CEG_SOLAR_SALT_2024
+CEG_SOLAR_SALT_60CR,infiltrated_composite_matrix,1,1,1,0,0,0,0,B,KUMAR_CEG_SOLAR_SALT_2024
+SIC_FOAM_SOLAR_SALT,open_cell_ceramic_foam,1,1,0,0,0,1,0,A,ZHANG_SIC_SOLAR_SALT_2022
+NI_FOAM_SOLAR_SALT_G1,open_cell_metal_foam,1,1,1,0,0,0,0,A,XIAO_METAL_FOAM_SOLAR_SALT_2020
+CU_FOAM_SOLAR_SALT_G1,open_cell_metal_foam,1,1,1,0,0,0,0,A,XIAO_METAL_FOAM_SOLAR_SALT_2020

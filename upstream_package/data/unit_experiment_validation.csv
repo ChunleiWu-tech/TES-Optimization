@@ -1,0 +1,6 @@
+validation_id,topology,source_id,validation_type,observable,reported_value,active_for_v10,validation_level,notes
+VAL_WEISS_GEOMETRY,sensible_packed_bed_LTNE,WEISS_PACKED_BED_SOLAR_SALT_2024,experiment,reference geometry + flow + component capacity,D=0.797 m; H=1.447 m; eps=0.501; dp=12.6 mm; mdot=0.232 kg/s; filler capacity=35.4 kWh per 100 K,True,direct reference closure,Current runnable branch.
+VAL_HO2017_NU,material_transport_benchmark,HO_NANOHITEC_CONVECTION_2017,experiment,mean Nusselt enhancement,11.6% at 0.25 wt% Al2O3; 9.2% at 0.063 wt% in reported laminar mini-tube conditions,True,external experimental benchmark,Not transferred as a generic Nu multiplier.
+VAL_SHIN2011_CP,material_property_benchmark,SHIN_CHLORIDE_SIO2_2011,experiment,replicate liquid Cp,base 0.84/0.86; 1 wt% SiO2 0.96/0.99 J g-1 K-1; paper-reported +14.5%,True,material evidence,Chloride family remains dynamically gated.
+VAL_ABIR2024_CP,material_property_benchmark,ABIR_SHIN_SOLAR_SALT_SIO2_2024,experiment,average SHC change,+15.65% at 1 wt% SiO2 versus same-study pure Solar Salt,True,independent replication evidence,Kept separate from Andreu 2014.
+VAL_WANG2024_TMS,material_property_benchmark,WANG_TMS_SULFATE_2024,experiment,TMS-2 Cp and thermal window,Cp 1.69 vs 1.55 J g-1 K-1 (+9.03%); melting 220.97 C; decomposition 611.25 C,True,material evidence,No dynamic transport claim.

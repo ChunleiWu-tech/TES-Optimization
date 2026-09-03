@@ -1,0 +1,418 @@
+{
+  "version": "16.0.0",
+  "status": "PASS",
+  "checks_passed": 68,
+  "checks_total": 68,
+  "findings": [
+    {
+      "check": "256 geometries × 3 topologies × 5 fluids",
+      "pass": true,
+      "detail": 3840
+    },
+    {
+      "check": "unit design IDs unique",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "all published unit results use 2048-cell confirmation",
+      "pass": true,
+      "detail": [
+        2048
+      ]
+    },
+    {
+      "check": "screen-to-confirmation mapping complete",
+      "pass": true,
+      "detail": 3840
+    },
+    {
+      "check": "screen t90 p95 difference below 2%",
+      "pass": true,
+      "detail": 0.28161691179731263
+    },
+    {
+      "check": "screen high-grade p95 absolute difference below 0.08",
+      "pass": true,
+      "detail": 0.032777967983214785
+    },
+    {
+      "check": "temperature clipping never used",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "every unit discharge inherits its simulated charge-end profile",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "charge horizon prepares at least 99% of rated inventory before discharge",
+      "pass": true,
+      "detail": 0.9999952526751372
+    },
+    {
+      "check": "charge discrete energy balance closes",
+      "pass": true,
+      "detail": 1.0237655168054973e-08
+    },
+    {
+      "check": "discharge discrete energy balance closes",
+      "pass": true,
+      "detail": 1.0076917078549741e-08
+    },
+    {
+      "check": "bounded temperatures without clipping",
+      "pass": true,
+      "detail": [
+        773.1499999999952,
+        823.1500000000084
+      ]
+    },
+    {
+      "check": "reported temperature extrema cover the complete transient",
+      "pass": true,
+      "detail": {
+        "initial state and every explicit transient time step": 3840
+      }
+    },
+    {
+      "check": "reported thermocline thicknesses have unique 0.90 and 0.10 crossings; any one-cell local departure is confined to the graded-layer interface",
+      "pass": true,
+      "detail": {
+        "crossings_90": [
+          1
+        ],
+        "crossings_10": [
+          1
+        ],
+        "maximum_nonmonotonic_steps": 1,
+        "interface_local_departures": 1280,
+        "interface_topologies": [
+          "graded_two_layer"
+        ]
+      }
+    },
+    {
+      "check": "all baseline physics comparisons pass registered unit gates",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "no thermal comparison is promoted to deployment eligibility",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "all five salt–skeleton pairs eligible only for physics comparison",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "all five pair deployment gates remain closed",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "unit Pareto front non-empty and traceable",
+      "pass": true,
+      "detail": 299
+    },
+    {
+      "check": "two fixed-service scenarios complete",
+      "pass": true,
+      "detail": 7680
+    },
+    {
+      "check": "discrete modular unit counts valid",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "deliverable service energy closes at resolved flow",
+      "pass": true,
+      "detail": 1.0068938460783272e-05
+    },
+    {
+      "check": "adjacent lower integer unit count is infeasible",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "installed capacity uses threshold-defined deliverable energy",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "every service closure retains cycle-coupled discharge",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "every service result uses within-step threshold interpolation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "charge-discharge asymmetry is resolved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "all registered baseline fixed-service cases meet model-scope constraints",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "geometry-normalized on-array header friction is resolved for every service case",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "hydraulic screen records its Darcy-Weisbach scope",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "hydraulic objective states excluded installed-pump components",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "no model-admissible service case is promoted to deployment eligibility",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "all 1,536 matched groups contain ten fluid pairs",
+      "pass": true,
+      "detail": 15360
+    },
+    {
+      "check": "no matched fluid pair reverses at system scale",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "integer closure produces at least one exact array tie from a nonzero material difference",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "tie and fully strict groups exhaust the 1,536 matched groups",
+      "pass": true,
+      "detail": {
+        "with_ties": 53,
+        "fully_strict": 1483
+      }
+    },
+    {
+      "check": "flow re-solution never increases the energy-limited integer",
+      "pass": true,
+      "detail": {
+        "increased_cases": 0
+      }
+    },
+    {
+      "check": "flow re-solution records both decreased and unchanged energy-limited integers",
+      "pass": true,
+      "detail": {
+        "decreased_cases": 7488,
+        "unchanged_cases": 192
+      }
+    },
+    {
+      "check": "power-limited and energy-limited service cases are both present",
+      "pass": true,
+      "detail": {
+        "power_limited": 182,
+        "energy_limited": 7498
+      }
+    },
+    {
+      "check": "power-limited excess capacity is separated from energy-limited integer closure",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "energy-limited integer oversize is nonnegative",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "system Pareto front non-empty and traceable",
+      "pass": true,
+      "detail": 52
+    },
+    {
+      "check": "decision-resolution front does not exceed exact audit front",
+      "pass": true,
+      "detail": {
+        "exact": 267,
+        "decision": 52
+      }
+    },
+    {
+      "check": "Pareto precision sensitivity complete",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "every retained decision passes the 4096-cell release gate",
+      "pass": true,
+      "detail": {
+        "retained": 52,
+        "accepted": 52
+      }
+    },
+    {
+      "check": "retained decision deliverable-energy change remains within 0.5%",
+      "pass": true,
+      "detail": 0.3735780715802272
+    },
+    {
+      "check": "retained decision high-grade fraction change remains within 0.005",
+      "pass": true,
+      "detail": 0.0036556849260133
+    },
+    {
+      "check": "external validation roles separated",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "cooling segment explicitly retained as holdout",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "external benchmark digitisation boundary explicit",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "MUSCL reduces numerical diffusion",
+      "pass": true,
+      "detail": {
+        "MUSCL_L1": 0.034201958528142,
+        "first_order_L1": 0.0878738308953526
+      }
+    },
+    {
+      "check": "effective particle resistance agrees with radial FV within 3%",
+      "pass": true,
+      "detail": 2.290347967030204
+    },
+    {
+      "check": "lumped particle model demonstrably invalid at high Bi",
+      "pass": true,
+      "detail": 67.0699869082514
+    },
+    {
+      "check": "time-step sensitivity resolved",
+      "pass": true,
+      "detail": 0.0
+    },
+    {
+      "check": "threshold-qualified energy time-step sensitivity remains below 0.01 absolute fraction",
+      "pass": true,
+      "detail": 0.0
+    },
+    {
+      "check": "all 7,680 service cases are re-closed at g = 0.85, 0.90 and 0.95",
+      "pass": true,
+      "detail": 23040
+    },
+    {
+      "check": "median required count responds monotonically to the outlet-grade threshold",
+      "pass": true,
+      "detail": {
+        "0.85": 0.9914619629249191,
+        "0.9": 1.0,
+        "0.95": 1.013281566174757
+      }
+    },
+    {
+      "check": "retained designs include explicit reference-to-module scale sensitivity",
+      "pass": true,
+      "detail": 156
+    },
+    {
+      "check": "run-wise frozen transport properties are bounded at cold, mean and hot duty temperatures",
+      "pass": true,
+      "detail": 156
+    },
+    {
+      "check": "full integer scans confirm monotone installed energy and the reported minima for every retained decision case",
+      "pass": true,
+      "detail": {
+        "cases": 52,
+        "counts_scanned": 94918
+      }
+    },
+    {
+      "check": "stratified counterexample search finds no non-monotone sampled capacity increment",
+      "pass": true,
+      "detail": {
+        "cases": 90,
+        "evaluations": 778
+      }
+    },
+    {
+      "check": "air-bed cooling discrepancy is compared with the threshold margin but not transferred as molten-salt uncertainty",
+      "pass": true,
+      "detail": {
+        "registered_g090_hot_end_margin_K": 4.999999999999999,
+        "cooling_holdout_RMSE_K": 61.294460205054236,
+        "cooling_holdout_mean_bias_K": -48.500005868642546,
+        "RMSE_to_threshold_margin_ratio": 12.25889204101085,
+        "bias_to_threshold_margin_ratio": 9.700001173728511,
+        "interpretation": "Deterministic decision-threshold sensitivity. The cooling holdout discrepancy is from an air packed bed and is not transferred as a molten-salt probability distribution or correction."
+      }
+    },
+    {
+      "check": "missing property uncertainty is retained as not assessed",
+      "pass": true,
+      "detail": 4
+    },
+    {
+      "check": "independent sampling sensitivity covers four seeds and both services",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "property stress covers both services",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "standby-loss durations complete",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "model-form stress hierarchy complete",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "summary matches confirmed release",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "profile": {
+    "unit_rows": 3840,
+    "unit_pareto_rows": 299,
+    "service_rows": 7680,
+    "system_pareto_rows": 52,
+    "maximum_abs_charge_balance_error_pct": 1.0237655168054973e-08,
+    "maximum_abs_discharge_balance_error_pct": 1.0076917078549741e-08,
+    "temperature_range_K": [
+      773.1499999999952,
+      823.1500000000084
+    ],
+    "validation_holdout_RMSE_K": 61.29446020505424,
+    "validation_holdout_envelope_coverage_pct": 81.11111111111111
+  }
+}

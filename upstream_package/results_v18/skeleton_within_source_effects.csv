@@ -1,0 +1,6 @@
+architecture_family,candidate_id,source_id,capacity_change_pct_vs_matched_baseline,rate_or_transport_change_pct_vs_matched_baseline,rate_or_transport_metric,temperature_window_C,comparison_scope,cross_architecture_rank_eligible
+infiltrated_CEG_matrix,CEG_SOLAR_SALT_60CR,KUMAR_CEG_SOLAR_SALT_2024,-29.528185543223138,250.0,thermal conductivity midpoint of reported 3-4 fold interval,50-300; conductivity measured near ambient,same-source neat Solar Salt baseline,False
+open_cell_SiC_foam,SIC_FOAM_SOLAR_SALT,ZHANG_SIC_SHELL_TUBE_2023,-13.6,54.9,unit energy-storage rate,phase change near 220,same-source no-foam unit,False
+open_cell_Ni_foam,NI_FOAM_SOLAR_SALT_G1,XIAO_METAL_FOAM_SOLAR_SALT_2020,-5.605247465712582,163.4662327095199,measured liquid thermal effusivity,260-290,same-source neat Solar Salt baseline,False
+open_cell_Cu_foam,CU_FOAM_SOLAR_SALT_G1,XIAO_METAL_FOAM_SOLAR_SALT_2020,-18.246869409660103,318.6330349877949,measured liquid thermal effusivity,260-290,same-source neat Solar Salt baseline,False
+ceramic_sphere_packed_bed,CERAMIC_SPHERE_PACKED_BED,WEISS_PACKED_BED_SOLAR_SALT_2024,0.0,0.0,reference for the executable dynamic branch,290-390 experiment; 500-550 compatibility context,source-complete reference geometry and filler properties,True

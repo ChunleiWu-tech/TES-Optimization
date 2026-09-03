@@ -1,0 +1,26 @@
+# Python environments and bytecode
+.venv/
+__pycache__/
+*.py[cod]
+*.nbc
+*.nbi
+
+# Local execution state, transient staging, and durable-run artefacts
+upstream_package/.results_v16_staging/
+upstream_package/.results_v16_previous/
+upstream_package/.v16_restart_checkpoints/
+upstream_package/.v18_checkpoints/
+upstream_package/run_records/
+upstream_package/*.log
+upstream_package/*.err.log
+
+# Recreated postprocessing outputs
+postprocessing_package/figures/
+postprocessing_package/tables/
+postprocessing_package/FIGURE_AUDIT_V18.json
+
+# Local editor and operating-system state
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

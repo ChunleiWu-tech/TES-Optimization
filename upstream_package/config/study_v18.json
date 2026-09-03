@@ -1,0 +1,281 @@
+{
+  "study_id": "TES-DESIGN-CONSEQUENCE-BOUNDARY-V18-2026-09-02",
+  "version": "18.0.0",
+  "execution": {
+    "service_parallel_workers": 12,
+    "service_parallel_chunk_size": 8,
+    "audit_parallel_workers": 8,
+    "geometry_parallel_workers": 12,
+    "geometry_parallel_geometry_batch_size": 4,
+    "interpretation": "Independent geometry/fluid evaluations and service/design closures are dispatched in deterministic input order. Parallelism changes wall-clock time only; each worker uses the same registered transient solver, grid, tolerance and integer-closure algorithm."
+  },
+  "scientific_question": "When does a matched molten-salt performance difference remain large enough, after finite-rate transport and flow-dependent modularization, to change the minimum integer module configuration required for a prescribed power-energy service?",
+  "core_hypothesis": "A nonzero system-level material difference changes a modular design only when its self-consistent shift in continuous module requirement crosses an integer configuration boundary; the consequence therefore depends jointly on surviving thermophysical contrast and architectural granularity.",
+  "claim_boundary": "V18 adds a continuous analysis coordinate and an exact integer-boundary audit to the frozen V16 evidence-gated co-design. Fractional module count is used only to locate the continuous service-closure boundary with the unchanged one-dimensional LTNE kernel, property registry, outlet-grade threshold, power lower bound and feasibility limits. Physical designs remain integer-valued. The DLR air experiment tests transferable packed-bed model behavior and does not validate molten-salt chemistry. Salt-skeleton compatibility, corrosion, wetting, long-cycle stability, structural design, cost and EPC feasibility remain gated.",
+  "frozen_property_registry_note": "The five fluid property model identifiers retain the V10 suffix because their source-registered equations are unchanged. V16 changes numerical resolution, hydraulic screening, service closure, decision precision, robustness, validation tiers and reporting. It does not silently replace property evidence.",
+  "common_duty_C": [
+    500.0,
+    550.0
+  ],
+  "fluid_model_ids": [
+    "SOLAR_SALT_60_40_V10",
+    "NREL_MGCL2_KCL_NACL_BASELINE_V10",
+    "AIP_FLINAK_2017_V10",
+    "AIP_LINAK_CARBONATE_2017_V10",
+    "AIP_LIF_NAK_CARBONATE_RECIPROCAL_2017_V10"
+  ],
+  "reference_geometry": {
+    "internal_diameter_m": 0.797,
+    "bed_height_m": 1.447,
+    "porosity": 0.501,
+    "particle_diameter_m": 0.0126,
+    "solid_density_kg_m3": 2732.0,
+    "solid_cp_J_kgK": 1295.0,
+    "solid_thermal_conductivity_W_mK": 0.592,
+    "skeleton_id": "Ceramic_sphere_Weiss2024",
+    "source_id": "WEISS_PACKED_BED_SOLAR_SALT_2024"
+  },
+  "design_space": {
+    "internal_diameter_m": [
+      0.65,
+      1.15
+    ],
+    "bed_height_m": [
+      1.0,
+      2.2
+    ],
+    "porosity": [
+      0.42,
+      0.58
+    ],
+    "particle_diameter_m": [
+      0.008,
+      0.02
+    ],
+    "nominal_thermal_input_kW": [
+      9.0,
+      27.0
+    ]
+  },
+  "topologies": [
+    {
+      "topology": "homogeneous",
+      "gradient_ratio": 1.0,
+      "gradient_orientation": "none",
+      "layer_fraction": 0.5
+    },
+    {
+      "topology": "graded_two_layer",
+      "gradient_ratio": 1.8,
+      "gradient_orientation": "fine_hot",
+      "layer_fraction": 0.5
+    },
+    {
+      "topology": "graded_two_layer",
+      "gradient_ratio": 1.8,
+      "gradient_orientation": "coarse_hot",
+      "layer_fraction": 0.5
+    }
+  ],
+  "sampling": {
+    "method": "five_dimensional_latin_hypercube_with_matched_topology_expansion",
+    "baseline_n": 256,
+    "baseline_seed": 20260821,
+    "screen_n_cells": 64,
+    "robustness_sample_sizes": [64, 128, 192],
+    "robustness_seeds": [20260821, 20260822, 20260823, 20260824],
+    "robustness_n_cells": 128,
+    "confirmation_n_cells": 2048,
+    "confirmation_scope": "all_baseline_material_topology_cases"
+  },
+  "admissibility": {
+    "minimum_bed_to_particle_ratio": 30.0,
+    "maximum_particle_Re": 100000.0,
+    "maximum_absolute_energy_balance_error_pct": 0.1,
+    "temperature_bound_tolerance_K": 0.001,
+    "minimum_high_grade_discharge_fraction": 0.4,
+    "pair_gate_file": "data/salt_skeleton_pair_registry.csv"
+  },
+  "unit_objectives": [
+    [
+      "volumetric_capacity_MWh_m3",
+      "maximize"
+    ],
+    [
+      "high_grade_discharge_fraction",
+      "maximize"
+    ],
+    [
+      "charge_t90_h",
+      "minimize"
+    ],
+    [
+      "pressure_drop_kPa",
+      "minimize"
+    ]
+  ],
+  "service_scenarios": [
+    {
+      "scenario_id": "S10MW_8H",
+      "target_thermal_power_MW": 10.0,
+      "storage_duration_h": 8.0,
+      "minimum_outlet_grade_fraction": 0.9
+    },
+    {
+      "scenario_id": "S50MW_6H",
+      "target_thermal_power_MW": 50.0,
+      "storage_duration_h": 6.0,
+      "minimum_outlet_grade_fraction": 0.9
+    }
+  ],
+  "service_objectives": [
+    [
+      "installed_packed_volume_m3",
+      "minimize"
+    ],
+    [
+      "salt_inventory_t",
+      "minimize"
+    ],
+    [
+      "pump_energy_fraction",
+      "minimize"
+    ],
+    [
+      "capacity_oversize_pct",
+      "minimize"
+    ]
+  ],
+  "service_model": {
+    "maximum_unit_pressure_drop_kPa": 50.0,
+    "maximum_unit_count": 200000,
+    "minimum_resolved_to_nominal_duty_ratio": 0.05,
+    "closure_max_iterations": 20,
+    "array_header_hydraulics": {
+      "header_design_velocity_m_s": 1.5,
+      "pipe_absolute_roughness_m": 0.000045,
+      "module_pitch_multiplier": 1.25,
+      "minimum_header_length_m": 3.0,
+      "model": "two-level balanced square-array Darcy-Weisbach friction screen with one trunk and one lateral supply-return pair; uniform module flow is prescribed and fittings, valves, heat exchangers and site-specific manifolds are excluded"
+    },
+    "model_scope": "parallel modular packed zones; discrete unit count, bed friction and a geometry-normalized on-array header-friction screen are included. Tank shells, fittings, valves, heat exchangers, site-specific trunk routing, flow maldistribution and balance of plant are excluded. Hydraulic values are screening metrics, not installed-pump specifications."
+  },
+  "design_consequence_boundary": {
+    "analysis_variable": "continuous module count used only as a mathematical coordinate; physical configurations remain integer-valued",
+    "energy_closure": "G(N)=N*E_del(N)-E_req with E_del recomputed by the unchanged LTNE transient at total_flow/N",
+    "root_selection": "energy-closure crossing in the adjacent validated integer bracket [N_star-1,N_star]; a lower bracket is sought only when the nominal-power constraint already governs",
+    "continuous_power_lower_bound": "N_P_cont=P/P_unit_nom",
+    "continuous_count_definition": "N_cont=max(N_E_cont,N_P_cont,1)",
+    "root_relative_energy_tolerance": 1e-5,
+    "root_count_absolute_tolerance": 1e-9,
+    "root_count_relative_tolerance": 1e-12,
+    "integer_ceiling_relative_tolerance": 1e-12,
+    "endpoint_convention": "when G(N_star-1)<0 but the adjacent root is numerically indistinguishable from N_star-1, store the root on the strict feasible-side limit outside the registered ceiling tolerance",
+    "boundary_sign_tolerance": 1e-8,
+    "checkpoint_rows": 32,
+      "parallel_workers": 10,
+    "minimum_continuous_count": 0.001,
+    "interpretation": "The pairwise integer-boundary margin is a geometric consequence of the registered ceiling convention, not a fitted parameter, preference weight or empirical threshold."
+  },
+  "module_scale_sensitivity": {
+    "linear_scale_factors": [1.0, 2.0, 4.0],
+    "module_count_ceilings": [100, 500, 1000, 5000, 25000],
+    "interpretation": "Extrapolative model-domain sensitivity with diameter and height scaled together and nominal mass flow scaled with cross-sectional area to preserve superficial velocity. Shell stress, manifolds, valves, heat exchangers, installation count, cost and EPC feasibility are not solved."
+  },
+  "service_monotonicity_audit": {
+    "scope": "full integer scan from the power lower bound to the reported minimum for every retained decision-resolution case; a stratified all-service probe separately searches for non-monotone capacity increments before the exact-front audit",
+    "maximum_full_integer_scan_span": 30000
+  },
+  "decision_precision": {
+    "relative_fraction": {
+      "installed_packed_volume_m3": 0.005,
+      "salt_inventory_t": 0.005,
+      "pump_energy_fraction": 0.02
+    },
+    "capacity_oversize_absolute_pct": 0.1,
+    "sensitivity_multipliers": [0.0, 0.5, 1.0, 2.0],
+    "interpretation": "Decision-resolution fronts use epsilon boxes. Exact fronts are retained only as audit outputs. The widths represent engineering resolution, not probability. Release is blocked unless 4096-cell reclosure of every retained 2048-cell decision case is within the numerical acceptance bounds."
+  },
+  "topology_response": {
+    "matched_base_geometries": 24,
+    "seed": 20260831,
+    "n_cells": 128,
+    "gradient_ratios": [1.0, 1.3, 1.6, 1.9, 2.2],
+    "layer_fractions": [0.3, 0.4, 0.5, 0.6, 0.7],
+    "orientations": ["fine_hot", "coarse_hot"]
+  },
+  "model_form_stress": {
+    "n_cells": 128,
+    "ambient_temperature_C": 25.0,
+    "scenarios": [
+      {"stress_id": "intrinsic_adiabatic", "axial_dispersion_m2_s": 0.0, "solid_axial_diffusivity_m2_s": 0.0, "surface_heat_transfer_coefficient_W_m2K": 0.0},
+      {"stress_id": "bounded_moderate", "axial_dispersion_m2_s": 5e-7, "solid_axial_diffusivity_m2_s": 1e-7, "surface_heat_transfer_coefficient_W_m2K": 0.1},
+      {"stress_id": "bounded_severe", "axial_dispersion_m2_s": 2e-6, "solid_axial_diffusivity_m2_s": 5e-7, "surface_heat_transfer_coefficient_W_m2K": 0.5}
+    ],
+    "interpretation": "These are deterministic model-form stress cases. Every nonzero effective surface coefficient is referenced to the explicitly registered 25 C ambient sink and converted for each unit using A/V = 4/D + 2/H. The registered values are engineering stress bounds, not transferred calibration values, measurements or probability distributions."
+  },
+  "standby_loss": {
+    "durations_h": [2.0, 6.0, 12.0, 24.0],
+    "surface_heat_transfer_coefficient_W_m2K": [0.0, 0.1, 0.5],
+    "ambient_temperature_C": 25.0,
+    "interpretation": "Uniform-hot inventory screen with registered effective surface coefficients converted by each unit's external area-to-packed-volume ratio. It bounds standby sensitivity and is not a thermocline-cycle validation."
+  },
+  "verification": {
+    "grid_cells": [
+      64,
+      128,
+      256,
+      512,
+      1024,
+      2048,
+      4096
+    ],
+    "external_validation_file": "data/dlr_weber_2025_figure_benchmark.csv",
+    "external_validation_role": "transferable_air_packed_bed_model_class_validation_with_heating_calibration_and_cooling_holdout",
+    "particle_radial_shells": 16,
+    "production_maximum_time_step_s": 5.0,
+    "outlet_grade_thresholds": [0.85, 0.90, 0.95],
+    "threshold_interpretation": "Deterministic decision-threshold sensitivity. The cooling holdout discrepancy is from an air packed bed and is not transferred as a molten-salt probability distribution or correction."
+  },
+  "numerical_decision_validation": {
+    "production_n_cells": 2048,
+    "refinement_n_cells": 4096,
+    "maximum_absolute_deliverable_energy_change_pct": 0.5,
+    "maximum_absolute_high_grade_fraction_change": 0.005,
+    "maximum_absolute_parallel_unit_count_change_pct": 0.5,
+    "scope": "Every retained 2048-cell decision-resolution case is reclosed at 4096 cells. The release fails if any registered capacity, high-grade fraction or integer-count tolerance is exceeded. This candidate-level refinement validates reporting resolution; it does not turn the one-dimensional model into chemistry or plant validation."
+  },
+  "bounded_property_uncertainty": {
+    "stress_samples": 32,
+    "seed": 20260911,
+    "models": {
+      "AIP_FLINAK_2017_V10": {
+        "viscosity": [
+          0.971,
+          1.029
+        ]
+      },
+      "AIP_LINAK_CARBONATE_2017_V10": {
+        "viscosity": [
+          0.97,
+          1.03
+        ]
+      },
+      "NREL_MGCL2_KCL_NACL_BASELINE_V10": {
+        "density": [
+          0.99,
+          1.01
+        ],
+        "viscosity": [
+          0.94,
+          1.06
+        ],
+        "conductivity": [
+          0.88,
+          1.12
+        ]
+      }
+    },
+    "interpretation": "Latin-hypercube frequency under registered bounds is a non-probabilistic stress diagnostic, not a probability distribution. Missing uncertainty is retained as missing."
+  }
+}

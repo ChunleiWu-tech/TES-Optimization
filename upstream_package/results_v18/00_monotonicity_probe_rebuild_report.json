@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "selection_cases": 90,
+  "rows": 778,
+  "all_local_capacity_sequences_nondecreasing": true,
+  "workers": 10,
+  "output": "service_monotonicity_probe_v18.csv"
+}

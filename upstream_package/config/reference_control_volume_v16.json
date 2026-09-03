@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "study_id": "TES-REFERENCE-CONTROL-VOLUME-V16-2026-08-21",
+    "version": "16.0.0",
+    "data_status": "source_registered_and_machine_audited",
+    "human_review_approved": false,
+    "analysis_label": "Component inventory closure and source-bound reference geometry. This is not a deployment certificate.",
+    "responsible_author_review_status": "required_before_manuscript_submission"
+  },
+  "storage_unit": {
+    "unit_type": "single_tank_dual_media_thermocline_reference",
+    "model_family": "cylindrical_packed_bed_sensible_heat",
+    "reference_source_id": "WEISS_PACKED_BED_SOLAR_SALT_2024",
+    "reference_locator": "Table 1; Appendix A Table 4; Table 2",
+    "reference_geometry": {
+      "internal_diameter_m": 0.797,
+      "packed_bed_height_m": 1.447,
+      "wall_thickness_m": 0.008,
+      "skeleton_porosity": 0.501,
+      "skeleton_particle_diameter_m": 0.0126,
+      "mass_flow_kg_s": 0.232
+    },
+    "benchmark_capacity": {
+      "temperature_step_K": 100.0,
+      "dual_media_total_MWh": 0.0893,
+      "filler_MWh": 0.0354,
+      "salt_MWh": 0.0458,
+      "steel_MWh": 0.0081,
+      "locator": "Table 2, 290 C / 390 C case"
+    }
+  },
+  "data_files": {
+    "pair_registry_csv": "data/salt_skeleton_pair_registry.csv",
+    "external_validation_registry_csv": "data/external_validation_source_registry.csv",
+    "external_validation_figure_benchmark_csv": "data/dlr_weber_2025_figure_benchmark.csv",
+    "skeleton_material_evidence_csv": "data/skeleton_material_evidence.csv",
+    "skeleton_reported_outcomes_csv": "data/skeleton_reported_outcomes.csv"
+  },
+  "external_validation": {
+    "status": "independent_air_model_form_validation_plus_salt_reference_inventory_closure",
+    "statement": "The DLR shallow packed-bed dataset validates the thermal model class and exposes radial model discrepancy. The Weiss reference closes component inventory for a molten-salt unit. Neither source resolves cross-salt chemical compatibility or long-cycle deployment performance.",
+    "submission_eligibility": "scientific_core_ready_subject_to_responsible_author_review_and_explicit_claim_boundary"
+  }
+}

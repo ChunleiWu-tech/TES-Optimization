@@ -1,0 +1,8 @@
+{
+  "status": "PASS_WITH_EXPLICIT_DATA_GATES",
+  "n_skeleton_candidates": 6,
+  "n_architectures": 6,
+  "n_common_dynamic_architectures": 1,
+  "n_nanoparticle_states": 23,
+  "cross_architecture_rule": "No direct global ranking across skeleton architectures. All effect sizes are normalised to matched within-source baselines; only the source-complete ceramic packed-bed branch enters the common dynamic Pareto analysis."
+}

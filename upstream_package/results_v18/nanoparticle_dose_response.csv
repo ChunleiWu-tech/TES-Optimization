@@ -1,0 +1,24 @@
+study_group,source_id,state_id,base_salt,nanoparticle,loading_wt_pct,temperature_C,temperature_window_C_source,cp_liquid_J_kgK,cp_sd_J_kgK,reported_cp_change_pct,evidence_mode,comparison_mode,dynamic_transport_complete
+ANDREU2014,ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,ANDREU_SIO2_05,NaNO3-KNO3 60:40,SiO2,0.5,,250-420,1530.0,70.0,3.41,measured_absolute_cp,within_source,False
+ANDREU2014,ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,ANDREU_SIO2_10,NaNO3-KNO3 60:40,SiO2,1.0,,250-420,1850.0,60.0,25.03,measured_absolute_cp,within_source,False
+ANDREU2014,ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,ANDREU_SIO2_15,NaNO3-KNO3 60:40,SiO2,1.5,,250-420,1510.0,90.0,2.0,measured_absolute_cp,within_source,False
+ANDREU2014,ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,ANDREU_SIO2_20,NaNO3-KNO3 60:40,SiO2,2.0,,250-420,1530.0,120.0,3.69,measured_absolute_cp,within_source,False
+ANDREU2014,ANDREU_CABEDO_SIO2_SOLAR_SALT_2014,ANDREU_NEAT,NaNO3-KNO3 60:40,none,0.0,,250-420,1480.0,90.0,0.0,measured_absolute_cp,within_source,True
+CHIERUZZI2013,CHIERUZZI_NP_BINARY_NITRATE_2013,CHIERUZZI_SIO2AL2O3_10,NaNO3-KNO3 60:40,SiO2-Al2O3,1.0,,250-300,2010.56,,22.0,derived_from_reported_relative_change,within_source,False
+CHIERUZZI2013,CHIERUZZI_NP_BINARY_NITRATE_2013,CHIERUZZI_BASE,NaNO3-KNO3 60:40,none,0.0,,250-300,1648.0,,0.0,measured_absolute_cp,within_source,False
+LASFARGUES2015_CuO,LASFARGUES_CUO_TIO2_NITRATE_2015,LASF2015_CUO_0P1,Solar Salt,CuO,0.1,440.0,265-440,,,10.48,exact_reported_table_relative_change,within_source,False
+LASFARGUES2015_CuO,LASFARGUES_CUO_TIO2_NITRATE_2015,LASF2015_CUO_0P5,Solar Salt,CuO,0.5,440.0,265-440,,,9.18,exact_reported_table_relative_change,within_source,False
+LASFARGUES2015_CuO,LASFARGUES_CUO_TIO2_NITRATE_2015,LASF2015_CUO_1P0,Solar Salt,CuO,1.0,440.0,265-440,,,8.49,exact_reported_table_relative_change,within_source,False
+LASFARGUES2015_CuO,LASFARGUES_CUO_TIO2_NITRATE_2015,LASF2015_CUO_1P5,Solar Salt,CuO,1.5,440.0,265-440,,,2.19,exact_reported_table_relative_change,within_source,False
+LASFARGUES2015_TiO2,LASFARGUES_CUO_TIO2_NITRATE_2015,LASF2015_TIO2_0P1,Solar Salt,TiO2,0.1,440.0,265-440,,,1.57,exact_reported_table_relative_change,within_source,False
+LASFARGUES2015_TiO2,LASFARGUES_CUO_TIO2_NITRATE_2015,LASF2015_TIO2_0P5,Solar Salt,TiO2,0.5,440.0,265-440,,,4.95,exact_reported_table_relative_change,within_source,False
+LASFARGUES2015_TiO2,LASFARGUES_CUO_TIO2_NITRATE_2015,LASF2015_TIO2_1P0,Solar Salt,TiO2,1.0,440.0,265-440,,,4.72,exact_reported_table_relative_change,within_source,False
+LASFARGUES2015_TiO2,LASFARGUES_CUO_TIO2_NITRATE_2015,LASF2015_TIO2_1P5,Solar Salt,TiO2,1.5,440.0,265-440,,,4.85,exact_reported_table_relative_change,within_source,False
+LU2013,LU_AL2O3_SOLAR_SALT_2013,LU_BASE,NaNO3-KNO3 60:40,none,0.0,,290-335,1590.0,31.0,0.0,measured_absolute_cp,within_source,False
+XIE2016,XIE_GNP_SOLAR_SALT_2016,XIE_GNP_01,NaNO3-KNO3 60:40,graphene nanoplatelets,0.1,,250-450,1170.0,,-15.2,measured_absolute_cp_and_reported_relative_change,within_source,False
+XIE2016,XIE_GNP_SOLAR_SALT_2016,XIE_GNP_05,NaNO3-KNO3 60:40,graphene nanoplatelets,0.5,,250-450,,,7.9,reported_relative_change_only,within_source,False
+XIE2016,XIE_GNP_SOLAR_SALT_2016,XIE_GNP_10,NaNO3-KNO3 60:40,graphene nanoplatelets,1.0,,250-450,1630.0,,16.7,measured_absolute_cp_and_reported_relative_change,within_source,False
+XIE2016,XIE_GNP_SOLAR_SALT_2016,XIE_GNP_15,NaNO3-KNO3 60:40,graphene nanoplatelets,1.5,,250-450,,,9.4,reported_relative_change_only,within_source,False
+XIE2016,XIE_GNP_SOLAR_SALT_2016,XIE_GNP_20,NaNO3-KNO3 60:40,graphene nanoplatelets,2.0,,250-450,,,2.9,reported_relative_change_only,within_source,False
+XIE2016,XIE_GNP_SOLAR_SALT_2016,XIE_GNP_25,NaNO3-KNO3 60:40,graphene nanoplatelets,2.5,,250-450,,,0.7,reported_relative_change_only,within_source,False
+XIE2016,XIE_GNP_SOLAR_SALT_2016,XIE_BASE,NaNO3-KNO3 60:40,none,0.0,,250-450,1380.0,,0.0,measured_absolute_cp_rounded,within_source,False
