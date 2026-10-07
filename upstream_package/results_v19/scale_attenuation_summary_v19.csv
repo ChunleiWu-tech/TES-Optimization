@@ -1,0 +1,4 @@
+stage_order,stage,comparisons,median_absolute_log_contrast_in,median_absolute_log_contrast_out,median_attenuation_log_magnitude,attenuation_fraction,amplification_fraction,unchanged_fraction
+1,fluid_to_filled_module,15360,0.36656000622687984,0.16166177128616,0.19096661238497195,1.0,0.0,0.0
+2,filled_module_to_transient_module,15360,0.16166177128616,0.1850061109823852,-0.020908396183924496,0.0,1.0,0.0
+3,transient_module_to_modular_system,15360,0.1850061109823852,0.1691769989160584,0.012234313085616205,0.9994791666666667,0.0005208333333333333,0.0

@@ -1,0 +1,7 @@
+{
+  "identity": "2a61e75d7b758935efaa955461df225082533315cc19a4aedd81a42f5fbec4ec",
+  "committed": "2026-10-06T20:14:48.179509",
+  "csv_sha256": "4ecf5a0858b5a8d89e581fbaa3a64b1e4111943e40fa5931c5cb88ae20cb3d2a",
+  "predictions_digest": "6fbb86cf4ef0c0ccbb100de4fb791515de780e1fa5c209e1e56ee03c4cc550ab",
+  "interpretation": "This is an explicitly documented supplemental validation design after identifying a coverage gap. All successes, errors, power-controlled cases and domain-infeasible cases are retained. It is not a preregistered discovery test or experimental validation."
+}

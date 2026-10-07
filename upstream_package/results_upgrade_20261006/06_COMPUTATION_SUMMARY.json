@@ -1,0 +1,11 @@
+{
+  "status": "COMPUTATION_COMPLETE_PENDING_SCIENTIFIC_REVIEW",
+  "original_identity": "97da941546e50620257c5558cd5342cb6ee76a02891a6098a243933962d25ed5",
+  "recovery_identity": "e1afbe22debe1bede0ebb7439fb567ebfd421461d05a6d8b6873f917fcd07f0d",
+  "physical_model_stress_cases": 120,
+  "domain_unsupported": 24,
+  "energy_or_grade_infeasible": 12,
+  "publication_status": "NOT_PROMOTED",
+  "original_stages_01_to_04_preserved": true,
+  "supplemental_07_08_pending": true
+}

@@ -1,0 +1,10 @@
+{
+  "identity": "cdac06d0b78d21efd36aabb87340381b0aeb3eabc65597c694015b637efd8906",
+  "checked_at_utc": "2026-10-06T13:28:13.455148+00:00",
+  "sampled_runs": 8,
+  "all_stored_boundaries_matched": true,
+  "all_conservation_accepted": true,
+  "all_property_domains_supported": true,
+  "scope": "Eight prespecified sampled same-kernel boundary replays, not all 48 confirmations or an independent physical solver.",
+  "publication_status": "NOT_PROMOTED"
+}

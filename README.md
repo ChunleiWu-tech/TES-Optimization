@@ -1,12 +1,12 @@
-# Cross-scale co-design of molten-salt packed-bed thermal storage
+# Cross-scale transient co-design reveals when material differences change modular thermal-storage architecture
 
-This repository is the GitHub-ready, reproducible V18 release accompanying a study of molten-salt packed-bed thermal-energy-storage co-design. It asks a specific design question: when does a fluid-property difference remain sufficiently large, after propagation through transient packed-bed physics and integer module sizing, to change the selected modular configuration?
+This repository accompanies a study of transient, cross-scale co-design for molten-salt packed-bed thermal energy storage. It addresses a specific scientific question: when does a thermophysical-property difference remain sufficiently large after liquid displacement, transient fluid–solid heat transfer, flow redistribution, competing service constraints, and integer module sizing to alter the modular storage architecture?
 
 The repository separates three evidence layers:
 
 1. **Upstream model.** A conservative, cycle-coupled local-thermal-nonequilibrium packed-bed model evaluates the storage module, including an outlet-temperature qualification criterion.
-2. **Service and decision analysis.** Prescribed power–energy requirements are closed with integer module counts. The V18 analysis tests whether a continuous material difference crosses the governing constraint and the next whole-module threshold.
-3. **Postprocessing.** The figure workflow regenerates six main figures and nine supplementary figures as vector PDF files from the validated V18 result tables.
+2. **Service and decision analysis.** Prescribed power–energy requirements are closed with integer module counts. The analysis determines whether a continuous material difference changes the active energy or rated-power constraint and exceeds an integer module-count threshold.
+3. **Statistical design and postprocessing.** The frozen deterministic results are extended with base-geometry cluster-bootstrap intervals, scale-by-scale attenuation decomposition, adversarial integer-boundary stresses, and Pareto-set stability. The figure workflow regenerates six main figures and ten supplementary figures as vector PDF files.
 
 The terms *module* and *storage unit* refer to one physical packed bed. A *modular system* is the integer number of identical parallel modules required to meet the specified service requirement.
 
@@ -19,11 +19,12 @@ upstream_package/
   data/                   property, validation, and evidence registries
   results_v16/            validated baseline tables required for reproduction
   results_v18/            validated integer-reclosure and module-count threshold tables
+  results_v19/            statistical-design and decision-boundary stability tables
   scripts/                staged analysis and audit entry points
   tests/                  scientific regression tests
 postprocessing_package/
   scripts/                publication-figure builder and fail-closed audit
-  FIGURE_CAPTIONS_V18.md  complete captions for the 15 composite figures
+  FIGURE_CAPTIONS_V18.md  complete captions for the 16 composite figures
 docs/                     workflow, reproducibility, and GitHub upload notes
 ```
 
@@ -41,7 +42,7 @@ pip install -e .\upstream_package
 python -m unittest discover -s .\upstream_package\tests -p "test_*.py"
 ```
 
-The validated V16/V18 tables are included so figures can be regenerated immediately:
+The validated V16/V18 tables and the V18.1 statistical extension are included so figures can be regenerated immediately:
 
 ```powershell
 $env:TES_FIGURE_OUTPUT_ROOT = (Resolve-Path .\postprocessing_package).Path
@@ -61,4 +62,4 @@ This release is ready for Git CLI upload. Its validated CSV data are approximate
 
 ## Citation and licence
 
-Before making a public repository, complete the author, title, DOI, and licence fields described in [CITATION.md](CITATION.md) and [LICENSE_NOTICE.md](LICENSE_NOTICE.md). No open-source licence is granted by this draft repository.
+The public repository is https://github.com/ChunleiWu-tech/TES-Optimization. Cite the repository together with the commit hash used for analysis.

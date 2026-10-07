@@ -34,6 +34,7 @@ EXPECTED_SUPP = [
     "Supplementary_Figure_S07_robustness_seed_detail",
     "Supplementary_Figure_S08_architecture_source_detail",
     "Supplementary_Figure_S09_scale_threshold_and_monotonicity",
+    "Supplementary_Figure_S10_statistical_design_and_boundary_stability",
 ]
 
 
@@ -84,6 +85,7 @@ def main() -> None:
         "Supplementary_Figure_S02_numerical_verification": 4,
         "Supplementary_Figure_S05_topology_fluid_disaggregation": 4,
         "Supplementary_Figure_S09_scale_threshold_and_monotonicity": 5,
+        "Supplementary_Figure_S10_statistical_design_and_boundary_stability": 5,
     }
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     manifest_by_id = {row["figure_id"]: row for row in manifest}
@@ -103,7 +105,7 @@ def main() -> None:
         reports.append(inspect_pdf(folder / f"{stem}.pdf", expected_counts.get(stem, 6)))
     captions = CAPTIONS.read_text(encoding="utf-8")
     caption_tokens = [f"Figure {idx}." for idx in range(1, 7)] + [
-        f"Supplementary Figure S{idx}." for idx in range(1, 10)
+        f"Supplementary Figure S{idx}." for idx in range(1, 11)
     ]
     checks = {
         "exact_expected_pdf_set": actual == expected,
@@ -131,14 +133,14 @@ def main() -> None:
     }
     status = "PASS" if all(checks.values()) else "FAIL"
     result = {
-        "version": "18.0.0",
+        "version": "18.1.0",
         "status": status,
         "checks": checks,
         "pdf_reports": reports,
         "non_pdf_artifacts": non_pdf,
         "visual_review": {
             "status": "PASS",
-            "scope": "All 15 PDFs rendered at 180 dpi and inspected in contact sheets; Figure 5, S8 and S9 additionally inspected at full resolution.",
+            "scope": "All 16 PDFs rendered and inspected; Figure 5, S1, S8, S9 and S10 additionally inspected at full resolution.",
             "confirmed": [
                 "external and aligned panel letters",
                 "legends outside data regions",

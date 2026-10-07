@@ -145,7 +145,7 @@ const sheets = [
   },
   {
     name: "E_Reclosure",
-    title: "Figure 5e source data: independent integer re-evaluation",
+    title: "Figure 5e source data: comparison of integer-sizing procedures",
     source: "00_integer_reclosure_audit.csv",
     headers: [
       "case_id", "scenario_id", "design_id", "fluid_model_id", "archived_count",
@@ -195,18 +195,18 @@ readme.showGridLines = false;
 readme.getRange("A1:B1").values = [["Item", "Definition"]];
 readme.getRange("A2:B14").values = [
   ["Workbook", "Origin data for Figure 5: design-consequence boundary"],
-  ["Release", "Validated V18 numerical release, 2026-09-02"],
+  ["Dataset", "Validated numerical results archived on 2026-09-02"],
   ["Scientific question", "When does a matched thermophysical-property contrast change the required number of parallel packed-bed modules?"],
-  ["Physical model", "Unchanged from the validated V16 packed-bed model; V18 adds a continuous module coordinate and exact integer-boundary analysis."],
+  ["Physical model", "A transient local thermal non-equilibrium packed-bed model is coupled to a continuous module coordinate and exact integer-boundary analysis."],
   ["Service constraints", "Nominal module power rating, required energy Pτ, and normalized outlet-temperature criterion g_out ≥ 0.90."],
   ["N_E", "Self-consistent continuous module requirement imposed by deliverable energy."],
   ["N_P", "Continuous lower bound imposed by the nominal module power rating."],
   ["N_cont", "max(N_E, N_P, 1); an analysis coordinate, not a fractional physical installation."],
   ["M_IB", "ΔN_cont minus the distance from the smaller continuous count to the next integer boundary."],
   ["Key result", "218 matched pairs have the same module count; all are governed by the common nominal power-rating constraint."],
-  ["Numerical audit", "67 of 7,680 service cases shift by one module under independent code-consistent re-evaluation; the largest capacity-reproduction difference is 0.00312%."],
-  ["Decision robustness", "The exact Pareto front changes from 267 to 271 alternatives, whereas all 52 alternatives retained at predefined objective-resolution thresholds remain unchanged."],
-  ["Claim boundary", "The workbook does not support cross-source skeleton ranking or claims about corrosion, wetting, cycling, or deployment readiness."],
+  ["Integer-procedure comparison", "Monotonic feasibility search and exhaustive integer enumeration differ by one module in 67 of 7,680 cases; the maximum absolute installed-capacity difference is 0.00312%."],
+  ["Nondominated alternatives", "The two integer procedures yield exact nondominated sets of 267 and 271 alternatives, respectively, while retaining the same 52 alternatives at predefined objective-resolution thresholds."],
+  ["Evidence requirement", "System-level comparison of alternative skeletons requires matched thermal, hydraulic, chemical, wetting, and cycling measurements."],
 ];
 readme.getRange("A1:B1").format = { fill: navy, font: { bold: true, color: "#FFFFFF" } };
 readme.getRange("A2:A14").format = { fill: pale, font: { bold: true, color: navy } };
@@ -268,8 +268,8 @@ qa.getRange("A2:A8").values = [
   ["Equal-module pairs"],
   ["Boundary identity matches"],
   ["Integer counts changed"],
-  ["Exact-front alternatives after re-evaluation"],
-  ["Objective-resolution alternatives after re-evaluation"],
+  ["Exact nondominated alternatives from exhaustive enumeration"],
+  ["Objective-resolution alternatives from exhaustive enumeration"],
 ];
 qa.getRange("B2:B8").formulas = [
   ["=COUNTA('A_Constraints'!A2:A7681)"],

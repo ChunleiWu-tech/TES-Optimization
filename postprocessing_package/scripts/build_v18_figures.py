@@ -28,6 +28,7 @@ PP = HERE.parents[1]
 ROOT = PP.parent
 UP = ROOT / "upstream_package"
 RES = UP / "results_v18"
+RES19 = UP / "results_v19"
 DATA = UP / "data"
 OUT = Path(os.environ.get("TES_FIGURE_OUTPUT_ROOT", str(PP))).resolve()
 
@@ -98,6 +99,21 @@ def load_v18() -> dict[str, object]:
     tables["integer_reclosure_v18"] = pd.read_csv(
         RES / "00_integer_reclosure_audit.csv"
     )
+    tables["attenuation_decomposition_v19"] = pd.read_csv(
+        RES19 / "scale_attenuation_decomposition_v19.csv"
+    )
+    tables["attenuation_summary_v19"] = pd.read_csv(
+        RES19 / "scale_attenuation_summary_v19.csv"
+    )
+    tables["statistical_estimands_v19"] = pd.read_csv(
+        RES19 / "statistical_estimands_v19.csv"
+    )
+    tables["integer_boundary_stability_v19"] = pd.read_csv(
+        RES19 / "integer_boundary_stability_v19.csv"
+    )
+    tables["pareto_release_stability_v19"] = pd.read_csv(
+        RES19 / "pareto_release_stability_v19.csv"
+    )
     return tables
 
 
@@ -126,6 +142,9 @@ def copy_release_tables() -> None:
         DATA / "external_validation_source_registry.csv",
     ):
         shutil.copy2(source, base.TABLES / source.name)
+    for source in sorted(RES19.iterdir()):
+        if source.is_file() and source.suffix.lower() in {".csv", ".json"}:
+            shutil.copy2(source, base.TABLES / source.name)
     provenance = []
     dependency = json.loads((RES / "04_dependency_audit_v18.json").read_text(encoding="utf-8"))
     retained = dependency["retained_v16_verification_tables"]
@@ -140,6 +159,108 @@ def copy_release_tables() -> None:
         )
     pd.DataFrame(provenance).to_csv(
         base.TABLES / "V18_TABLE_PROVENANCE.csv", index=False
+    )
+
+
+def supplementary_10_statistical_design(t: dict[str, object]) -> dict[str, object]:
+    pair = t["design_consequence_v18"]
+    estimates = t["statistical_estimands_v19"]
+    boundary = t["integer_boundary_stability_v19"]
+    pareto = t["pareto_release_stability_v19"]
+    fig, axs = base.five_panel_grid()
+
+    ax = axs[0]
+    base.panel(ax, 0)
+    levels = ["Fluid", "Filled\nmodule", "Transient\nmodule", "Modular\nsystem"]
+    columns = ["A_fluid_log", "A_filled_log", "A_dynamic_log", "A_system_log"]
+    medians = np.array([pair[column].abs().median() for column in columns])
+    x = np.arange(len(levels))
+    ax.plot(x, medians, "o-", color="#3978A8", lw=1.7, ms=5)
+    for xx, value in zip(x, medians):
+        ax.text(xx, value + 0.012, f"{value:.3f}", ha="center", va="bottom", fontsize=7)
+    ax.set_xticks(x, levels)
+    ax.set_ylabel("Median absolute log contrast")
+    ax.set_ylim(0, max(medians) * 1.22)
+    base.clean(ax)
+
+    ax = axs[1]
+    base.panel(ax, 1)
+    wanted = [
+        "Median retained Solar-Salt-referenced contrast",
+        "Median retained contrast across all material pairs",
+    ]
+    q = estimates.set_index("estimand").loc[wanted].reset_index()
+    y = np.arange(len(q))
+    point = q["point_estimate"].to_numpy(float)
+    low = q["confidence_low"].to_numpy(float)
+    high = q["confidence_high"].to_numpy(float)
+    ax.errorbar(point, y, xerr=[point - low, high - point], fmt="o", color="#3E9B65", capsize=3)
+    ax.set_yticks(y, ["Solar-Salt\nreference", "All material\npairs"])
+    ax.set_xlabel("Median retained contrast (%)")
+    ax.set_xlim(44, 51)
+    base.clean(ax)
+
+    ax = axs[2]
+    base.panel(ax, 2)
+    service_names = [
+        "Equal minimum-module-count frequency, 10 MW and 80 MWh",
+        "Equal minimum-module-count frequency, 50 MW and 300 MWh",
+    ]
+    q = estimates.set_index("estimand").loc[service_names].reset_index()
+    point = q["point_estimate"].to_numpy(float)
+    low = q["confidence_low"].to_numpy(float)
+    high = q["confidence_high"].to_numpy(float)
+    y = np.arange(2)
+    ax.errorbar(point, y, xerr=[point - low, high - point], fmt="o", color="#E6862A", capsize=3)
+    ax.set_yticks(y, ["10 MW, 80 MWh", "50 MW, 300 MWh"])
+    ax.set_xlabel("Equal-count frequency (%)")
+    ax.set_xlim(left=0)
+    base.clean(ax)
+
+    ax = axs[3]
+    base.panel(ax, 3)
+    q = boundary[boundary["scenario_id"].eq("ALL")].sort_values("perturbation_module_count")
+    ax.semilogx(
+        q["perturbation_module_count"],
+        100.0 * q["classification_stable_fraction"],
+        "o-",
+        color="#D75452",
+    )
+    ax.axhline(100.0, color="#444444", lw=0.7, ls=":")
+    ax.set_xlabel("Independent count perturbation, $\\varepsilon$ (modules)")
+    ax.set_ylabel("Stable classifications (%)")
+    ax.set_ylim(99.92, 100.005)
+    base.clean(ax)
+
+    ax = axs[4]
+    base.panel(ax, 4)
+    q = pareto[pareto["scenario_id"].eq("ALL")].copy()
+    order = ["exact_nondominated_set", "objective_resolution_set"]
+    q = q.set_index("front_definition").loc[order]
+    values = 100.0 * q["jaccard_similarity"].to_numpy(float)
+    bars = ax.bar(
+        np.arange(2),
+        values,
+        color=["#8E6BB7", "#4FAF9F"],
+        width=0.58,
+    )
+    for bar, value in zip(bars, values):
+        ax.text(bar.get_x() + bar.get_width() / 2, value + 1.2, f"{value:.1f}%", ha="center", va="bottom", fontsize=7)
+    ax.set_xticks(np.arange(2), ["Exact\nnondominated set", "Objective-resolution\nset"])
+    ax.set_ylabel("Pre-/post-reclosure membership Jaccard (%)")
+    ax.set_ylim(0, 108)
+    base.clean(ax)
+
+    return base.finish(
+        fig,
+        base.SUPP / "Supplementary_Figure_S10_statistical_design_and_boundary_stability",
+        5,
+        [
+            "02_pairwise_design_consequence.csv",
+            "statistical_estimands_v19.csv",
+            "integer_boundary_stability_v19.csv",
+            "pareto_release_stability_v19.csv",
+        ],
     )
 
 
@@ -241,7 +362,7 @@ def figure_5_v18(t: dict[str, object]) -> dict[str, object]:
     base.clean(ax)
     base.legend_above(ax, 2)
 
-    # c: the registered margin exactly separates equal and unequal arrays.
+    # c: the threshold margin separates equal and unequal module counts.
     ax = axs[0, 2]
     base.panel(ax, 2)
     for flag, colour, label in [
@@ -251,10 +372,10 @@ def figure_5_v18(t: dict[str, object]) -> dict[str, object]:
         q = np.sort(pairs.loc[pairs.same_integer.eq(flag), "integer_boundary_margin"].to_numpy(float))
         y = 100.0 * np.arange(1, len(q) + 1) / len(q)
         ax.plot(q, y, color=colour, label=label)
-    ax.axvline(0, color="#333333", lw=0.8, ls="--", label="Whole-module threshold")
+    ax.axvline(0, color="#333333", lw=0.8, ls="--", label="Integer module-count threshold")
     ax.set(
         xscale="symlog",
-        xlabel=r"Margin relative to whole-module threshold, $M_{IB}$ (modules)",
+        xlabel=r"Margin relative to integer module-count threshold, $M_{IB}$ (modules)",
         ylabel="Cumulative pairs (%)",
     )
     base.clean(ax)
@@ -283,7 +404,7 @@ def figure_5_v18(t: dict[str, object]) -> dict[str, object]:
     )
     ax.set(xlabel=r"Median one-module resolution, $100/N_{mid}$", ylabel="Power–energy requirement")
 
-    # e: independent reclosure exposes only one-module flips near zero error.
+    # e: the two integer procedures differ only near the feasibility boundary.
     ax = axs[1, 1]
     base.panel(ax, 4)
     changed = audit[audit.count_delta_vs_frozen.ne(0)].copy()
@@ -312,25 +433,25 @@ def figure_5_v18(t: dict[str, object]) -> dict[str, object]:
         borderaxespad=0,
     )
     ax.set(
-        xlabel=r"Capacity-reproduction difference ($\times 10^{-3}$ %)",
+        xlabel=r"Installed-capacity difference ($\times 10^{-3}$ %)",
         ylabel="Adjacent-lower-count energy margin (%)",
     )
     ax.xaxis.set_major_locator(mpl.ticker.MaxNLocator(5))
     base.clean(ax)
 
-    # f: exact mathematical fronts are sensitive; decision-resolution fronts are not.
+    # f: compare exact nondominance with objective-resolution filtering.
     ax = axs[1, 2]
     base.panel(ax, 5)
     x = np.arange(2)
     width = 0.33
     before = np.array([267, 52])
     after = np.array([271, 52])
-    ax.bar(x - width / 2, before, width, color="#9AA2AA", label="Initial integer evaluation")
-    ax.bar(x + width / 2, after, width, color="#3E9B65", label="Independent integer evaluation")
+    ax.bar(x - width / 2, before, width, color="#9AA2AA", label="Monotonic feasibility search")
+    ax.bar(x + width / 2, after, width, color="#3E9B65", label="Exhaustive integer enumeration")
     for xx, values in zip(x, zip(before, after)):
         for offset, value in zip((-width / 2, width / 2), values):
             ax.text(xx + offset, value + 4, str(value), ha="center", va="bottom", fontsize=7)
-    ax.set_xticks(x, ["Exact Pareto\nfront", "Objective-resolution\nfront"])
+    ax.set_xticks(x, ["Exact nondominated\nset", "Objective-resolution\nset"])
     ax.set_ylabel("Nondominated alternatives")
     ax.set_ylim(0, 310)
     base.clean(ax)
@@ -358,14 +479,27 @@ CAPTIONS["Figure 5"] = (
     "power-rating lower bound for 7,680 service cases. (b) Fluid-level contrast "
     "and continuous module-count difference for 15,360 matched material pairs. "
     "All 218 equal-count pairs are governed by the common nominal power-rating "
-    "constraint. (c) Continuous requirement differences relative to the next whole-module "
+    "constraint. (c) Continuous requirement differences relative to the next integer module-count "
     "threshold reproduce all pairwise equal- and unequal-count classifications. (d) Equal-count frequency across service "
-    "requirements and module granularities. (e) Independent integer evaluation "
-    "changes 67 counts by one module; across all 7,680 cases, the maximum absolute "
-    "capacity-reproduction difference is 0.00312%. (f) The exact Pareto front changes "
-    "from 267 to 271 alternatives, "
-    "whereas the 52 alternatives retained at predefined objective-resolution "
-    "thresholds and their membership are unchanged."
+    "requirements and module granularities. (e) Monotonic feasibility search and exhaustive "
+    "integer enumeration differ by one module in 67 cases; across all 7,680 cases, the maximum "
+    "absolute installed-capacity difference is 0.00312%. (f) The two procedures yield exact "
+    "nondominated sets of 267 and 271 alternatives, respectively, while retaining the same "
+    "52 alternatives at the predefined objective-resolution thresholds."
+)
+CAPTIONS["Supplementary Figure S10"] = (
+    "Statistical design and decision-boundary stability. (a) Median absolute log contrast "
+    "across the four linked scales. Filling the module produces the dominant attenuation, "
+    "finite-rate transport partially restores the contrast, and system integration attenuates "
+    "it again. (b) Median retained contrast with 95% base-geometry cluster-bootstrap intervals "
+    "for Solar-Salt-referenced and all-pair comparisons. (c) Equal minimum-module-count frequency "
+    "with 95% cluster-bootstrap intervals for the two power–energy services. (d) Fraction of all "
+    "15,360 pairwise classifications unchanged under independent worst-case perturbations of both "
+    "continuous module counts. All classifications remain unchanged through 0.01 module; nine may "
+    "change at 0.02 module. (e) Exact nondominated membership changes under integer reclosure, "
+    "whereas all 52 alternatives retained at the predefined objective resolution are unchanged. "
+    "Bootstrap intervals quantify sensitivity to the sampled base-geometry design space and do not "
+    "represent material-property or experimental uncertainty."
 )
 
 
@@ -392,6 +526,7 @@ def main() -> None:
         base.supplementary_7,
         base.supplementary_8,
         base.supplementary_9,
+        supplementary_10_statistical_design,
     )
     manifest = [builder(tables) for builder in builders]
     for record in manifest:
@@ -399,7 +534,7 @@ def main() -> None:
         for source in record["sources"]:
             if source in SOURCE_MAP:
                 resolved_sources.append(SOURCE_MAP[source])
-            elif (RES / f"{source}.csv").is_file():
+            elif (RES / f"{source}.csv").is_file() or (RES19 / f"{source}.csv").is_file():
                 resolved_sources.append(f"{source}.csv")
             else:
                 resolved_sources.append(source)
@@ -430,7 +565,7 @@ def main() -> None:
             {
                 "status": "PASS",
                 "main_figures": 6,
-                "supplementary_figures": 9,
+                "supplementary_figures": 10,
                 "formats": ["pdf"],
                 "manifest": str(manifest_path),
             },

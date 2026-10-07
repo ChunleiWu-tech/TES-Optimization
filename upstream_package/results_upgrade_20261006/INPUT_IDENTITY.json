@@ -1,0 +1,16 @@
+{
+  "identity": "97da941546e50620257c5558cd5342cb6ee76a02891a6098a243933962d25ed5",
+  "files": {
+    "config\\study_v18.json": "369fe233f8b624aae58319a09119b521030d14633db3f8ad0ea4d90a7686712e",
+    "config\\upgrade_design_20261006.json": "e46afc5670684eb17115416643dd57e615dd1267e304d91a2f68669f98747450",
+    "tespub\\upgrade_design_20261006.py": "eccc6deca9ba513b599deeedfbdb134e5e8e56430c5aac530a362eab2d67ade3",
+    "tespub\\ltne_v16.py": "606bbb667b270f5fd4053cd393cd3fca705c575439e04ac9f1afb68f147e4656",
+    "tespub\\fluid_properties.py": "6e08417cfa63413d524d44826f5e93d2d4ad341618d85fab8d66f86720899a25",
+    "tespub\\crossscale_dynamic.py": "4800b55d9596650cac0f9ab23a0305a9022fd28d029293161a523b78a542cb77",
+    "tespub\\codesign_v16.py": "6a7a7a6995c5746dd0e7b38d5739fc494ca8a5a29341ac075241c4f9cdd2472a",
+    "results_v16\\codesign_results_v16.csv": "7434faf82d7098a163350302611eb915a7f1c70d91e2dad7ced4eacace142be1",
+    "results_v18\\system_pareto_front_v18.csv": "d6cd175b85f2d70d90daf25541908304e26e69165b858cf20e983d71d91811f5",
+    "requirements.lock": "f17256b74505de55d06e50448094ef8a279ebb47ee82fb0319c2f3be986be6c5",
+    "scripts\\run_upgrade_20261006.py": "97bf0196d40101c0f96afba0bdd32bc8c052c417c150dae2dd3a09b04d0c4b18"
+  }
+}

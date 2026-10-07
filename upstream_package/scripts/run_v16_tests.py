@@ -13,13 +13,13 @@ sys.path.insert(0, str(ROOT))
 
 
 def main() -> None:
-    suite = unittest.defaultTestLoader.discover(str(ROOT / "tests"), pattern="test_v16.py")
+    suite = unittest.defaultTestLoader.discover(str(ROOT / "tests"), pattern="test*.py")
     stream = io.StringIO()
     start = time.perf_counter()
     result = unittest.TextTestRunner(stream=stream, verbosity=2).run(suite)
     elapsed = time.perf_counter() - start
     report = {
-        "version": "16.0.0",
+        "version": "18.1.0",
         "status": "PASS" if result.wasSuccessful() else "FAIL",
         "tests_run": result.testsRun,
         "failures": len(result.failures),
@@ -28,7 +28,9 @@ def main() -> None:
         "elapsed_s": elapsed,
         "transcript": stream.getvalue().splitlines(),
     }
-    out = ROOT / "results_v16" / "unit_test_report_v16.json"
+    out_dir = ROOT / "results_v19"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out = out_dir / "unit_test_report_v19.json"
     out.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(json.dumps({k: report[k] for k in ("version", "status", "tests_run", "failures", "errors", "skipped", "elapsed_s")}, indent=2))
     if not result.wasSuccessful():

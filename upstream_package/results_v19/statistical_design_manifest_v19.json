@@ -1,0 +1,41 @@
+{
+  "analysis_release": "18.1",
+  "source_directory": "E:\\桌面1\\TES多目标优化\\1006\\TES_CoDesign_V18_GitHub\\upstream_package\\results_v18",
+  "files": [
+    {
+      "path": "cluster_bootstrap_replicates_v19.csv",
+      "bytes": 602013,
+      "sha256": "97694bf145161ff3f29345a7aca715f075ba9c6c1aecd18d103c005221b19a48"
+    },
+    {
+      "path": "integer_boundary_stability_v19.csv",
+      "bytes": 3163,
+      "sha256": "432e1450df3a77be29d3d4fb0548a62d3448aafc007c0ca76b911a18030d8b81"
+    },
+    {
+      "path": "pareto_release_stability_v19.csv",
+      "bytes": 541,
+      "sha256": "fd22a9603deaf147edb12f06b437390bd7233c9ccd969f26c537a1afb912b599"
+    },
+    {
+      "path": "scale_attenuation_decomposition_v19.csv",
+      "bytes": 16242205,
+      "sha256": "6b6d80fefc82bbf18fbd0269fcc233621e009b7552076f1c6725a2f187cb27ce"
+    },
+    {
+      "path": "scale_attenuation_summary_v19.csv",
+      "bytes": 554,
+      "sha256": "018a7f66db9ec5dfffa945ce1a96d46959fe2781ea3f7bbabb39aa83fe8d868d"
+    },
+    {
+      "path": "statistical_design_summary_v19.json",
+      "bytes": 3695,
+      "sha256": "91e94549c9ab7673d10023577e962f9b77951c1527ccf2dab04330acf3ba04d9"
+    },
+    {
+      "path": "statistical_estimands_v19.csv",
+      "bytes": 2292,
+      "sha256": "4751462e2f236b13c35b3b8b7da3af693597a410f6d6f4437f9d9a24f2ceaa5f"
+    }
+  ]
+}

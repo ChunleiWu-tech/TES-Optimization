@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software or its validated data, please cite this GitHub repository and the commit used."
+title: "Cross-scale transient co-design reveals when material differences change modular thermal-storage architecture"
+type: software
+version: 18.1.0
+date-released: 2026-10-06
+url: "https://github.com/ChunleiWu-tech/TES-Optimization"
+repository-code: "https://github.com/ChunleiWu-tech/TES-Optimization"
+authors:
+  - family-names: Wu
+    given-names: Chunlei
+  - family-names: Sun
+    given-names: Chen
+  - family-names: Gao
+    given-names: Long
+  - family-names: Yang
+    given-names: Lizhong

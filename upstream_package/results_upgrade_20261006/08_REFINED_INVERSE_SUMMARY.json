@@ -1,0 +1,9 @@
+{
+  "status": "COMPLETE_PENDING_SCIENTIFIC_REVIEW",
+  "identity": "2a61e75d7b758935efaa955461df225082533315cc19a4aedd81a42f5fbec4ec",
+  "cases": 52,
+  "grid_evaluations": 104,
+  "refined_source_sha256": "8904908b62fb46eb152427fdd4bb487377f912c527afadcf367ab3231b97f99c",
+  "publication_status": "NOT_PROMOTED",
+  "interpretation": "Evaluate one fewer than each previously refined feasible count on both 2048/4096 grids, retaining all five registered material replacements. These are targets relative to a refined candidate configuration; the prior binary minimum-count search is not a new exhaustive proof of global minimality."
+}

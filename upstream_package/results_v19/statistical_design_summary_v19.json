@@ -1,0 +1,77 @@
+{
+  "analysis_release": "18.1",
+  "status": "PASS",
+  "source_release": "V18 frozen deterministic results",
+  "bootstrap": {
+    "replicates": 5000,
+    "seed": 20261006,
+    "confidence_level": 0.95,
+    "clusters": 256,
+    "independent_resampling_unit": "base_design_id",
+    "interpretation": "Cluster resampling quantifies sensitivity to the sampled base-geometry design space. It is not a probability model for material properties, plant operation, manufacturing variability, or experimental uncertainty. Material pairs, topologies, and service requirements remain paired within each resampled base geometry. Integer-boundary perturbations are deterministic adversarial numerical stresses, not confidence intervals."
+  },
+  "quality_checks": {
+    "all_boundary_identities_match": true,
+    "all_baseline_ties_match": true,
+    "no_pairwise_rank_reversals": true,
+    "attenuation_stage_rows": 46080,
+    "bootstrap_rows": 5000,
+    "estimand_rows": 7
+  },
+  "key_results": {
+    "solar_reference_retention_pct": {
+      "estimand": "Median retained Solar-Salt-referenced contrast",
+      "point_estimate": 46.86839978646004,
+      "confidence_low": 46.19538317444067,
+      "confidence_high": 47.62434082676655,
+      "unit": "%",
+      "confidence_level": 0.95,
+      "bootstrap_method": "percentile cluster bootstrap",
+      "independent_resampling_unit": "base_design_id",
+      "n_observations": 6144,
+      "n_clusters": 256,
+      "scope": "Sensitivity to the sampled base-geometry design space; material pairs, topologies, and services remain paired within resampled clusters."
+    },
+    "all_pair_retention_pct": {
+      "estimand": "Median retained contrast across all material pairs",
+      "point_estimate": 47.945132732159266,
+      "confidence_low": 47.333064512427924,
+      "confidence_high": 48.58114342031336,
+      "unit": "%",
+      "confidence_level": 0.95,
+      "bootstrap_method": "percentile cluster bootstrap",
+      "independent_resampling_unit": "base_design_id",
+      "n_observations": 15360,
+      "n_clusters": 256,
+      "scope": "Sensitivity to the sampled base-geometry design space; material pairs, topologies, and services remain paired within resampled clusters."
+    },
+    "equal_count_frequency_pct": {
+      "estimand": "Equal minimum-module-count frequency, all services",
+      "point_estimate": 1.4192708333333333,
+      "confidence_low": 0.5989583333333333,
+      "confidence_high": 2.4676106770833313,
+      "unit": "%",
+      "confidence_level": 0.95,
+      "bootstrap_method": "percentile cluster bootstrap",
+      "independent_resampling_unit": "base_design_id",
+      "n_observations": 15360,
+      "n_clusters": 256,
+      "scope": "Sensitivity to the sampled base-geometry design space; material pairs, topologies, and services remain paired within resampled clusters."
+    },
+    "paired_service_difference_percentage_points": {
+      "estimand": "Paired service difference in equal-count frequency, 50 MW minus 10 MW",
+      "point_estimate": 2.1354166666666665,
+      "confidence_low": 1.015625,
+      "confidence_high": 3.3984375,
+      "unit": "percentage points",
+      "confidence_level": 0.95,
+      "bootstrap_method": "percentile cluster bootstrap",
+      "independent_resampling_unit": "base_design_id",
+      "n_observations": 15360,
+      "n_clusters": 256,
+      "scope": "Sensitivity to the sampled base-geometry design space; material pairs, topologies, and services remain paired within resampled clusters."
+    },
+    "minimum_tested_perturbation_with_any_possible_change": 0.02,
+    "objective_resolution_front_jaccard_v16_v18": 1.0
+  }
+}

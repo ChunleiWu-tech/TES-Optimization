@@ -1,0 +1,22 @@
+perturbation_module_count,scenario_id,comparisons,classification_changes_possible,classification_stable_fraction,stress_definition
+1e-06,S10MW_8H,7680,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+1e-06,S50MW_6H,7680,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+1e-06,ALL,15360,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+1e-05,S10MW_8H,7680,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+1e-05,S50MW_6H,7680,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+1e-05,ALL,15360,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+0.0001,S10MW_8H,7680,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+0.0001,S50MW_6H,7680,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+0.0001,ALL,15360,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+0.001,S10MW_8H,7680,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+0.001,S50MW_6H,7680,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+0.001,ALL,15360,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+0.005,S10MW_8H,7680,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+0.005,S50MW_6H,7680,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+0.005,ALL,15360,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+0.01,S10MW_8H,7680,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+0.01,S50MW_6H,7680,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+0.01,ALL,15360,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+0.02,S10MW_8H,7680,0,1.0,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+0.02,S50MW_6H,7680,9,0.998828125,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test
+0.02,ALL,15360,9,0.9994140625,full independent perturbation intervals of both continuous module counts; exact attainable integer-range overlap test

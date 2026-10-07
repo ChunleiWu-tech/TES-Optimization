@@ -1,0 +1,30 @@
+{
+  "identity": "2a61e75d7b758935efaa955461df225082533315cc19a4aedd81a42f5fbec4ec",
+  "original_identity": "97da941546e50620257c5558cd5342cb6ee76a02891a6098a243933962d25ed5",
+  "amendment": {
+    "amendment_id": "ENERGY_CONTROLLED_CONFIRMATION_20261006",
+    "reason": "The original prespecified 24 fine-grid cases all resolve at the nominal-power lower bound. Preserve those cases and append a deliberately higher-energy service challenge; do not claim energy-controlled fine-grid validation from the original subset.",
+    "source_selection": "Same first newly seeded base geometry, all three particle arrangements, Solar Salt and FLiNaK; no selection on prediction success or outcome margin.",
+    "power_MW": [
+      0.1,
+      0.75
+    ],
+    "energy_to_power_h": [
+      30.0,
+      60.0
+    ],
+    "grid_cells": [
+      2048,
+      4096
+    ],
+    "cases": 24,
+    "workers": 8,
+    "refined_inverse_cases": 52,
+    "refined_inverse_count_source": "results_v18/decision_grid_refinement_v16.csv: matching design_id/scenario_id and parallel_unit_count at 4096 cells. Freeze all 52 originally retained designs, but do not equate the 2048-cell counts with refined counts.",
+    "refined_inverse_scope": "Evaluate one fewer than each previously refined feasible count on both 2048/4096 grids, retaining all five registered material replacements. These are targets relative to a refined candidate configuration; the prior binary minimum-count search is not a new exhaustive proof of global minimality.",
+    "prediction_inputs": "Previously persisted 512-cell single-module curves only. Do not use any fine-grid observed integer count in the prediction.",
+    "interpretation": "This is an explicitly documented supplemental validation design after identifying a coverage gap. All successes, errors, power-controlled cases and domain-infeasible cases are retained. It is not a preregistered discovery test or experimental validation."
+  },
+  "pid": 21396,
+  "started": "2026-10-06T20:14:48.085760"
+}

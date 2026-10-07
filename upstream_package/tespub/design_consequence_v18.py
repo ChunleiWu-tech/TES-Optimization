@@ -192,7 +192,7 @@ def _solve_continuous_case(
         # The transient event detector can make G(N) weakly nonsmooth at the
         # 1e-5 relative-energy scale.  Polish only such exceptional roots by
         # minimizing the registered closure residual inside the same sign
-        # bracket; never relax the preregistered acceptance threshold.
+        # bracket; never relax the predefined acceptance threshold.
         polished = minimize_scalar(
             lambda value: abs(evaluate_count(float(value))[0]),
             bounds=(lower, upper),

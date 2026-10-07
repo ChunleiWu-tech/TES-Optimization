@@ -215,7 +215,9 @@ def matrix(ax: plt.Axes, values: np.ndarray, rows: list[str], cols: list[str],
     for i in range(values.shape[0]):
         for j in range(values.shape[1]):
             label = text_values[i][j] if text_values is not None else format(values[i, j], fmt)
-            colour = "white" if abs(values[i, j] - vmin) > 0.58 * (vmax - vmin) else "#222222"
+            rgba = im.cmap(im.norm(values[i, j]))
+            luminance = 0.2126 * rgba[0] + 0.7152 * rgba[1] + 0.0722 * rgba[2]
+            colour = "#FFFFFF" if luminance < 0.48 else "#1A1A1A"
             ax.text(j, i, label, ha="center", va="center", fontsize=text_fontsize, color=colour)
     ax.set_xticks(range(len(cols)), cols, rotation=28, ha="right")
     ax.set_yticks(range(len(rows)), rows)
@@ -791,7 +793,7 @@ def supplementary_1(t: dict[str, object]) -> dict[str, object]:
     ax=axs.flat[5];panel(ax,5)
     unit=t['codesign_results_v16'];v=unit.groupby('fluid_model_id')[['fluid_volumetric_sensible_kWh_m3','Pr','Nu_min','Nu_max']].median().reindex(FLUID_ORDER)
     z=(v-v.min())/(v.max()-v.min())
-    matrix(ax,z.to_numpy(),[FLUID_SHORT[f] for f in FLUID_ORDER],['Fluid capacity','Prandtl','Nu min','Nu max'],'viridis',0,1,fmt='.2f',cbar_label='Normalized median')
+    matrix(ax,z.to_numpy(),[FLUID_SHORT[f] for f in FLUID_ORDER],['Fluid capacity','Prandtl','Nu min','Nu max'],'Blues',0,1,fmt='.2f',cbar_label='Normalized median')
     figure_legend(fig, [Line2D([0], [0], color=PALETTE[f]) for f in FLUID_ORDER],
                   [FLUID_ANNOTATION_SHORT[f] for f in FLUID_ORDER], ncol=3)
     return finish(fig,SUPP/'Supplementary_Figure_S01_source_qualified_fluid_properties',6,['fluid_properties.py','codesign_results_v16'])
@@ -1061,7 +1063,7 @@ CAPTIONS = {
     "Figure 4": "Module requirements under prescribed power–energy constraints after recalculating each module at its share of total flow. (a) Ratios of required to nominal module power. (b) Deliverable-energy fractions at nominal and module-specific flows. (c) Minimum required module counts under energy and nominal power-rating constraints. (d,e) Nondominated alternatives retained after applying the predefined objective-resolution thresholds for 10 MW, 80 MWh and 50 MW, 300 MWh. (f) Pressure drop along the simplified header route versus required module count; fittings, valves, heat exchangers, and external piping are excluded.",
     "Figure 5": "Skeleton and nanoparticle results are reported on their original experimental bases. (a) Within-study capacity-metric and rate or transport effects for compressed expanded graphite, silicon-carbide foam, and metal foams. (b,c) Nanoparticle loading response and maxima. (d) Source measurement ranges relative to the common study range. (e) Missing transient-model inputs. (f) Chemistry, wetting and cycling evidence for each salt-skeleton pair. Source identifiers and direct or calculated quantities are reported in Supporting Information Section S4.",
     "Figure 6": "Sensitivity tests address distinct sources of uncertainty. (a) Sensitivity to the predefined objective-resolution thresholds used to summarize the nondominated set. (b,c) Independent-sample IGD+ and additive epsilon indicators. (d) Deterministic propagation of source-reported property ranges. (e) Effects of model formulation on volume, deliverable-energy fraction and charge-discharge asymmetry; the severe case does not resolve the 90% response times. (f) Geometry-dependent standby heat loss; the adiabatic reference is omitted because it is identically zero.",
-    "Supplementary Figure S1": "Source-traceable fluid-property correlations across the common temperature range. (a–d) Density, heat capacity, viscosity and thermal conductivity. (e) Reported correlation-validity intervals. (f) Normalized capacity and transport descriptors.",
+    "Supplementary Figure S1": "Documented fluid-property correlations across the common temperature range. (a–d) Density, heat capacity, viscosity and thermal conductivity. (e) Reported correlation-validity intervals. (f) Normalized capacity and transport descriptors.",
     "Supplementary Figure S2": "Numerical verification. (a) Grid convergence of front thickness. (b) Grid convergence of charge-energy balance. (c) Numerical diffusion under first-order upwind and second-order minmod reconstruction. (d) Independent recalculation of all 52 reported modular-system designs with 4,096 instead of 2,048 cells, normalized by the predefined 0.50% deliverable-energy limit.",
     "Supplementary Figure S3": "Coverage of the defined single-module design space. (a–c) Unique base geometries across vessel, packing, and thermal-input variables; each base geometry is counted once. (d) Fine and coarse layer diameters derived from each base particle size. (e) Marginal coverage of the five sampled variables. (f) Pairwise correlations of the sampled variables.",
     "Supplementary Figure S4": "Single-module response distributions. (a) Salt and solid inventory. (b) Deliverable-energy fraction. (c) Pressure drop. (d) Charge time. (e) Deliverable-energy fraction versus frictional hydraulic-energy fraction. (f) Volumetric capacity versus salt inventory.",

@@ -1,0 +1,55 @@
+name: Scientific validation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install locked dependencies
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install -e .\upstream_package
+
+      - name: Compile source
+        shell: pwsh
+        run: python -m compileall -q .\upstream_package .\postprocessing_package
+
+      - name: Rebuild statistical extension
+        shell: pwsh
+        run: python .\upstream_package\scripts\build_statistical_design_v19.py
+
+      - name: Run scientific regression suite
+        shell: pwsh
+        run: python .\upstream_package\scripts\run_v16_tests.py
+
+      - name: Verify working tree remains reproducible
+        shell: pwsh
+        run: |
+          $changes = git status --porcelain -- `
+            upstream_package/results_v19/cluster_bootstrap_replicates_v19.csv `
+            upstream_package/results_v19/integer_boundary_stability_v19.csv `
+            upstream_package/results_v19/pareto_release_stability_v19.csv `
+            upstream_package/results_v19/scale_attenuation_decomposition_v19.csv `
+            upstream_package/results_v19/scale_attenuation_summary_v19.csv `
+            upstream_package/results_v19/statistical_estimands_v19.csv `
+            upstream_package/results_v19/statistical_design_summary_v19.json
+          if ($changes) {
+            $changes
+            throw "Statistical outputs differ from the committed files."
+          }

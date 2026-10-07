@@ -1,0 +1,7 @@
+front_definition,scenario_id,v16_count,v18_count,shared_count,union_count,jaccard_similarity,v18_retained_from_v16_fraction
+exact_nondominated_set,S10MW_8H,119,125,112,132,0.8484848484848485,0.9411764705882353
+exact_nondominated_set,S50MW_6H,148,146,138,156,0.8846153846153846,0.9324324324324325
+exact_nondominated_set,ALL,267,271,250,288,0.8680555555555556,0.9363295880149812
+objective_resolution_set,S10MW_8H,24,24,24,24,1.0,1.0
+objective_resolution_set,S50MW_6H,28,28,28,28,1.0,1.0
+objective_resolution_set,ALL,52,52,52,52,1.0,1.0

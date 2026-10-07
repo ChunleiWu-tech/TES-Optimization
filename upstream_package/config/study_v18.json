@@ -196,6 +196,16 @@
     "sensitivity_multipliers": [0.0, 0.5, 1.0, 2.0],
     "interpretation": "Decision-resolution fronts use epsilon boxes. Exact fronts are retained only as audit outputs. The widths represent engineering resolution, not probability. Release is blocked unless 4096-cell reclosure of every retained 2048-cell decision case is within the numerical acceptance bounds."
   },
+  "statistical_design": {
+    "analysis_release": "18.1",
+    "independent_resampling_unit": "base_design_id",
+    "cluster_count": 256,
+    "bootstrap_replicates": 5000,
+    "bootstrap_seed": 20261006,
+    "confidence_level": 0.95,
+    "integer_boundary_perturbations_module_count": [1e-6, 1e-5, 1e-4, 1e-3, 5e-3, 1e-2, 2e-2],
+    "interpretation": "Cluster resampling quantifies sensitivity to the sampled base-geometry design space. It is not a probability model for material properties, plant operation, manufacturing variability, or experimental uncertainty. Material pairs, topologies, and service requirements remain paired within each resampled base geometry. Integer-boundary perturbations are deterministic adversarial numerical stresses, not confidence intervals."
+  },
   "topology_response": {
     "matched_base_geometries": 24,
     "seed": 20260831,

@@ -1,0 +1,11 @@
+{
+  "status": "COMPLETE_PENDING_SCIENTIFIC_REVIEW",
+  "identity": "2a61e75d7b758935efaa955461df225082533315cc19a4aedd81a42f5fbec4ec",
+  "cases": 24,
+  "predictions_correct_2048": 24,
+  "predictions_correct_4096": 24,
+  "energy_controlled_cases_2048": 24,
+  "grid_stable_cases": 24,
+  "publication_status": "NOT_PROMOTED",
+  "interpretation": "This is an explicitly documented supplemental validation design after identifying a coverage gap. All successes, errors, power-controlled cases and domain-infeasible cases are retained. It is not a preregistered discovery test or experimental validation."
+}
